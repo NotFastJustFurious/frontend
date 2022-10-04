@@ -6,7 +6,7 @@ import {LockClosedIcon} from '@heroicons/react/20/solid'
 export default function Login() {
     return (
         <>
-            <NavigationBar></NavigationBar>
+            <NavigationBar hideLoginButton></NavigationBar>
             {/*
         This example requires updating your template:
 
