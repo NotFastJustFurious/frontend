@@ -5,7 +5,17 @@ function App() {
     return (
         <div className="App">
             <NavigationBar></NavigationBar>
-            <div className={"h-30 w-30 bg-blue-300"}>Hello there</div>
+            <div className={"w-full p-16"}>
+                <div className={" text-5xl md:text-9xl"}>
+                    Toaster
+                </div>
+                <div className={"text-2xl md:text-4xl pt-10"}>
+                    toaster toaster toasting things
+                </div>
+            </div>
+            <div>
+                <img className={"w-full"} src={"https://www.electrolux.co.th/globalassets/catalog/toasters--grills/e4ts1-50ss-angl-1500x1500-new.png"}/>
+            </div>
         </div>
     );
 }
