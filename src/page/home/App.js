@@ -14,7 +14,7 @@ function App() {
                 </div>
             </div>
             <div>
-                <img className={"w-full"} src={"https://www.electrolux.co.th/globalassets/catalog/toasters--grills/e4ts1-50ss-angl-1500x1500-new.png"}/>
+                <img className={"w-full"} src={"https://www.electrolux.co.th/globalassets/catalog/toasters--grills/e4ts1-50ss-angl-1500x1500-new.png"} alt="Toaster"/>
             </div>
         </div>
     );
