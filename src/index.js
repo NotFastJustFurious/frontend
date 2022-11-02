@@ -7,6 +7,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Login from "./page/login/Login";
 import Register from "./page/register/Register";
 import Profile from "./page/profile/Profile";
+import Chat from "./page/chat/Chat";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -22,6 +23,9 @@ const router = createBrowserRouter([
     }, {
         path: "/profile",
         element: <Profile/>
+    }, {
+        path: "/chat",
+        element: <Chat/>
     }
 ]);
 

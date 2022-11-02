@@ -1,10 +1,12 @@
-export default function LogCard() {
+export default function LogCard(props) {
+    let border = true;
+    let additionalClasses = ""
 
-    let messages = [
+    let messages: { author: string, content: string, time: string }[] = [
         {
             author: "John Doe",
             content: "Why",
-            time: "10 minutes ago"
+            time: "10 minutes ago",
         },
         {
             author: "John Die",
@@ -19,11 +21,23 @@ export default function LogCard() {
     ]
 
 
-    return <div className="flex flex-col mt-4">
+    if (props.messages) {
+        messages = props.messages;
+    }
+
+    if (props.border !== undefined) {
+        border = !!props.border;
+    }
+
+    if (props.className) {
+        additionalClasses = " " + props.className;
+    }
+
+    return <div className={"flex flex-col overflow-y-scroll" + additionalClasses}>
         {
             messages.map((message) => {
                 return <div
-                    className="flex flex-row m-2 items-center text-center p-5 rounded-2xl outline outline-2 outline-furious-green-3 hover:bg-furious-green-3 transition">
+                    className={"flex flex-row m-2 items-center text-center p-5 rounded-2xl hover:bg-furious-green-3 transition" + (border ? " outline outline-2 outline-furious-green-3" : "")}>
                     <div className="min-w-fit pr-8">
                         <div>
                             <img
