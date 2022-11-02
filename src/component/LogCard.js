@@ -17,6 +17,56 @@ export default function LogCard(props) {
             author: "John Die",
             content: "Please just kill me already!",
             time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
+        },
+        {
+            author: "John Die",
+            content: "Please just kill me already!",
+            time: "24 minutes ago"
         }
     ]
 
