@@ -31,6 +31,25 @@ export default function Profile() {
                         Patient
                     </a>
                 </div>
+                
+                <div className="flex flex-row items-center justify-center">
+                    <div>
+                        <button 
+                        type="button"
+                        className="rounded-full w-24 bg-furious-green">
+                            Take Survey
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                        type="button"
+                        className="rounded-full w-24 bg-furious-green"
+                        onClick = {onSubmit}
+                        >
+                            Progress
+                        </button>
+                    </div>
+                </div>
                 <LogCard className="flex-grow w-full border-t-2 mt-16 p-8 overflow-y-scroll"></LogCard>
             </div>
         </>
