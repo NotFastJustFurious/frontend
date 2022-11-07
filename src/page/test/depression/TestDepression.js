@@ -1,4 +1,4 @@
-import NavigationBar from "../../component/NavigationBar";
+import NavigationBar from "../../../component/NavigationBar";
 
 export default function Survey() {
     return (
@@ -6,7 +6,7 @@ export default function Survey() {
             <NavigationBar hideLoginButton></NavigationBar>
             <div className="flex flex-col justify-center">
                 <div className="items-center text-center">
-                    Paranoia Test
+                    Depression Test
                 </div>
                 <div className="flex flex-col item-left divide-y divide-furious-green">
                     <a className="font-medium text-indigo-600 hover:text-indigo-500">

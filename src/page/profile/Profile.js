@@ -1,5 +1,11 @@
 import NavigationBar from "../../component/NavigationBar";
 import LogCard from "../../component/LogCard";
+import {useEffect, useState} from "react";
+import {sendProfileGet} from "../../utils/Request";
+
+function capitalize(str){
+    return str.charAt(0).toUpperCase() + str.slice(1)
+}
 
 export default function Profile() {
     const onPro = (e) => {
@@ -9,30 +15,43 @@ export default function Profile() {
         window.location.href = "/survey";
     }
 
+    const [loadState, setLoadState] = useState(false);
+    const [userData, setUserData] = useState({});
+
+    if (!loadState) {
+        setLoadState(true);
+
+        sendProfileGet().then((res) => {
+            if (res.ok) {
+                res.json().then(body => {
+                    return body.data;
+                }).then(body => {
+                    setUserData(body)
+                });
+            } else {
+                window.location.href = "/login";
+            }
+        });
+    }
+
     return (
         <>
-            {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
             <div className="flex flex-col h-screen items-center justify-center">
                 <div className="w-full">
-                    <NavigationBar></NavigationBar>
+                    <NavigationBar authenticated></NavigationBar>
                 </div>
                 <img
-                    className="mx-auto h-24 w-24 overflow-hidden rounded-full bg-gray-100 border-2 border-furious-green"
+                    className="mx-auto h-24 w-24 rounded-full bg-gray-100 border-2 border-furious-green"
                     src="https://www.electrolux.co.th/globalassets/catalog/toasters--grills/e4ts1-50ss-angl-1500x1500-new.png"
-                    alt="toaster"/>
+                    alt="toaster"
+                />
                 <div className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                    Firstname Lastname
+                    {userData.firstName || "..."} {userData.lastName}
+
                 </div>
                 <div className="mt-2 text-center text-sm text-gray-600">
                     <a href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
-                        Patient
+                        {userData.type ? capitalize(userData.type) : "..."}
                     </a>
                 </div>
 

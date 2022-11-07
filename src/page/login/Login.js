@@ -1,12 +1,37 @@
 import './Login.css';
 import NavigationBar from "../../component/NavigationBar";
-
 import {LockClosedIcon} from '@heroicons/react/20/solid'
+import {useState} from "react";
+
+import {sendAuthLogin} from "../../utils/Request";
 
 export default function Login() {
-    const onSubmit = (e) => {
-        window.location.href = "/profile";
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
     }
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        sendAuthLogin(email, password).then((response) => {
+            if(response.ok){
+                window.location.href = "/profile";
+            }
+            else{
+                alert("Invalid credentials");
+            }
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
 
     return (
         <>
@@ -52,6 +77,8 @@ export default function Login() {
                                     required
                                     className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                     placeholder="Email address"
+                                    value={email}
+                                    onChange={handleEmailChange}
                                 />
                             </div>
                             <div>
@@ -66,6 +93,8 @@ export default function Login() {
                                     required
                                     className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                     placeholder="Password"
+                                    value={password}
+                                    onChange={handlePasswordChange}
                                 />
                             </div>
                         </div>
@@ -94,7 +123,7 @@ export default function Login() {
                             <button
                                 type="button"
                                 className="group relative flex w-full justify-center rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                onClick={onSubmit}
+                                onClick={handleSubmit}
                             >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <LockClosedIcon className="h-5 w-5 text-furious-green-3 group-hover:text-indigo-400"

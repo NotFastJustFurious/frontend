@@ -1,4 +1,4 @@
-import NavigationBar from "../../component/NavigationBar";
+import NavigationBar from "../../../component/NavigationBar";
 
 export default function Survey() {
     return (

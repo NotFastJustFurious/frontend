@@ -10,15 +10,15 @@ import Profile from "./page/profile/Profile";
 import Chat from "./page/chat/Chat";
 import Progress from "./page/progress/Progress";
 import Survey from "./page/survey/Survey";
-import TestAnxiety from "./page/testanxiety/TestAnxiety";
-import TestBipolar from "./page/testbipolar/TestBipolar";
-import TestDepression from "./page/testdepression/TestDepression";
-import TestOCD from "./page/testocd/TestOCD";
-import TestPanic from "./page/testpanic/TestPanic";
-import TestParanoia from "./page/testparanoia/TestParanoia";
+import TestAnxiety from "./page/test/anxiety/TestAnxiety";
+import TestBipolar from "./page/test/bipolar/TestBipolar";
+import TestDepression from "./page/test/depression/TestDepression";
+import TestOCD from "./page/test/ocd/TestOCD";
+import TestPanic from "./page/test/panic/TestPanic";
+import TestParanoia from "./page/test/paranoia/TestParanoia";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const router = createBrowserRouter([
+let routes = [
     {
         path: "/",
         element: <App/>
@@ -41,25 +41,27 @@ const router = createBrowserRouter([
         path: "/survey",
         element: <Survey/>
     }, {
-        path: "/testanxiety",
+        path: "/test/anxiety",
         element: <TestAnxiety/>
     }, {
-        path: "/testbipolar",
+        path: "/test/bipolar",
         element: <TestBipolar/>
     }, {
-        path: "/testdepression",
+        path: "/test/depression",
         element: <TestDepression/>
     }, {
-        path: "/testocd",
+        path: "/test/ocd",
         element: <TestOCD/>
     }, {
-        path: "/testpanic",
+        path: "/test/panic",
         element: <TestPanic/>
     }, {
-        path: "/testparanoia",
+        path: "/test/paranoia",
         element: <TestParanoia/>
     }
-]);
+];
+
+const router = createBrowserRouter(routes);
 
 
 root.render(
