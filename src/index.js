@@ -8,6 +8,8 @@ import Login from "./page/login/Login";
 import Register from "./page/register/Register";
 import Profile from "./page/profile/Profile";
 import Chat from "./page/chat/Chat";
+import Progress from "./page/progress/Progress";
+import Survey from "./page/survey/Survey";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -26,6 +28,12 @@ const router = createBrowserRouter([
     }, {
         path: "/chat",
         element: <Chat/>
+    }, {
+        path: "/progress",
+        element: <Progress/>
+    }, {
+        path: "/survey",
+        element: <Survey/>
     }
 ]);
 

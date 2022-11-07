@@ -2,6 +2,13 @@ import NavigationBar from "../../component/NavigationBar";
 import LogCard from "../../component/LogCard";
 
 export default function Profile() {
+    const onPro = (e) => {
+        window.location.href = "/progress";
+    }
+    const onSur = (e) => {
+        window.location.href = "/survey";
+    }
+
     return (
         <>
             {/*
@@ -33,7 +40,8 @@ export default function Profile() {
                     <div>
                         <button
                             type="button"
-                            className="rounded-full w-24 bg-furious-green">
+                            className="rounded-full w-24 bg-furious-green"
+                            onClick={onSur}>
                             Take Survey
                         </button>
                     </div>
@@ -41,7 +49,7 @@ export default function Profile() {
                         <button
                             type="button"
                             className="rounded-full w-24 bg-furious-green"
-                        >
+                            onClick={onPro}>
                             Progress
                         </button>
                     </div>

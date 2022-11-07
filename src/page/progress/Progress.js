@@ -4,7 +4,7 @@ import Issue from "../../component/Issue";
 export default function Progress(){
     return (
         <>
-            <NavigationBar></NavigationBar>
+            <NavigationBar hideLoginButton></NavigationBar>
 
             <div className="flex flex-col min-h-full items-center justify-center">
                 <div className="flex flex-col max-h-full items-center justify-center">
