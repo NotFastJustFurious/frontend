@@ -10,6 +10,12 @@ import Profile from "./page/profile/Profile";
 import Chat from "./page/chat/Chat";
 import Progress from "./page/progress/Progress";
 import Survey from "./page/survey/Survey";
+import TestAnxiety from "./page/testanxiety/TestAnxiety";
+import TestBipolar from "./page/testbipolar/TestBipolar";
+import TestDepression from "./page/testdepression/TestDepression";
+import TestOCD from "./page/testocd/TestOCD";
+import TestPanic from "./page/testpanic/TestPanic";
+import TestParanoia from "./page/testparanoia/TestParanoia";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -34,6 +40,24 @@ const router = createBrowserRouter([
     }, {
         path: "/survey",
         element: <Survey/>
+    }, {
+        path: "/testanxiety",
+        element: <TestAnxiety/>
+    }, {
+        path: "/testbipolar",
+        element: <TestBipolar/>
+    }, {
+        path: "/testdepression",
+        element: <TestDepression/>
+    }, {
+        path: "/testocd",
+        element: <TestOCD/>
+    }, {
+        path: "/testpanic",
+        element: <TestPanic/>
+    }, {
+        path: "/testparanoia",
+        element: <TestParanoia/>
     }
 ]);
 
