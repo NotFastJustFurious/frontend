@@ -9,22 +9,22 @@ export default function Survey() {
                     Surveys
                 </div>
                 <div className="flex flex-col item-left divide-y divide-furious-green">
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/testanxiety">
+                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/anxiety">
                         Anxiety Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/testbipolar">
+                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/bipolar">
                         Bipolar Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/testdepression">
+                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/depression">
                         Depression Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/testocd">
+                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/ocd">
                         OCD Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/testpanic">
+                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/panic">
                         Panic Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/testparanoia">
+                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/paranoia">
                         Paranoia Test
                     </a>
                 </div>
