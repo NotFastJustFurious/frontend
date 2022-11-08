@@ -1,12 +1,31 @@
 import NavigationBar from "../../component/NavigationBar";
 import {useState} from "react";
+import {sendAuthRegister} from "../../utils/Request"
 
 export default function Register() {
 
     const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [dob, setDateOfBirth] = useState("");
+    const [gender, setGender] = useState("");
 
     let onSubmit = (e) => {
-        setSuccess(true);
+
+        sendAuthRegister({username, firstName, lastName, password, dob, gender}).then(result => {
+            if (result.ok) {
+                setSuccess(true);
+            }
+            else{
+                result.json().then(data => {
+                    setError(data.error);
+                })
+            }
+        });
         console.log("submit");
     };
     onSubmit = onSubmit.bind(this);
@@ -17,6 +36,9 @@ export default function Register() {
             window.location.href = "/profile";
         }, 1000);
     }
+
+    console.log(username, password, firstName, lastName, gender, dob);
+    console.log(error);
 
     if (!success) {
         return (
@@ -41,6 +63,21 @@ export default function Register() {
                             <div className="-space-y-px rounded-md shadow-sm">
 
                                 <div>
+                                    <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+                                        Username
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        id="username"
+                                        required
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                        placeholder="Email address"
+                                        onChange={e => setUsername(e.target.value)}
+                                    />
+                                </div>
+
+                                <div>
                                     <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
                                         First name
                                     </label>
@@ -52,6 +89,7 @@ export default function Register() {
                                         required
                                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                         placeholder="First name"
+                                        onChange={e => setFirstName(e.target.value)}
                                     />
                                 </div>
 
@@ -67,21 +105,39 @@ export default function Register() {
                                         required
                                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                         placeholder="Last name"
+                                        onChange={e => setLastName(e.target.value)}
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                                        Email address
+                                    <label htmlFor="gender" className="block text-sm font-medium text-gray-700">
+                                        Gender
                                     </label>
                                     <input
-                                        type="email"
-                                        name="email-address"
-                                        id="email-address"
-                                        autoComplete="email"
+                                        type="text"
+                                        name="gender"
+                                        id="gender"
+                                        autoComplete="gender"
                                         required
                                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        placeholder="Email address"
+                                        placeholder="Gender"
+                                        onChange={e => setGender(e.target.value)}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="date-of-birth" className="block text-sm font-medium text-gray-700">
+                                        Date of birth
+                                    </label>
+                                    <input
+                                        type="date"
+                                        name="date-of-birth"
+                                        id="date-of-birth"
+                                        autoComplete="date-of-birth"
+                                        required
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                        placeholder="Date of birth"
+                                        onChange={e => setDateOfBirth(e.target.value)}
                                     />
                                 </div>
 
@@ -97,6 +153,7 @@ export default function Register() {
                                         required
                                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                         placeholder="Password"
+                                        onChange={e => setPassword(e.target.value)}
                                     />
                                 </div>
 
@@ -105,8 +162,9 @@ export default function Register() {
 
                                 <div className="bg-gray-50 text-center">
                                     <button
-                                        type="submit"
+                                        type="button"
                                         className="group relative flex w-full justify-center rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                        onClick={onSubmit}
                                     >
                                         Sign Up
                                     </button>

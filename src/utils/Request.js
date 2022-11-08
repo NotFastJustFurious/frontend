@@ -21,6 +21,15 @@ function sendAuthLogout() {
     return sendRequest("DELETE", "login");
 }
 
+/**
+ *
+ * @param data {{username, firstName, lastName, password, gender, dob}}
+ * @returns {Promise<Response>}
+ */
+function sendAuthRegister(data){
+    return sendRequest("POST", "register", data);
+}
+
 function sendProfileGet() {
     return sendRequest("GET", "profile");
 }
@@ -28,3 +37,4 @@ function sendProfileGet() {
 exports.sendAuthLogin = sendAuthLogin;
 exports.sendAuthLogout = sendAuthLogout;
 exports.sendProfileGet = sendProfileGet;
+exports.sendAuthRegister = sendAuthRegister;
