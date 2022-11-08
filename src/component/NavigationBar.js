@@ -2,6 +2,8 @@ import {Fragment} from 'react'
 import {Disclosure, Menu, Transition} from '@headlessui/react'
 import {Bars3Icon, BellIcon, XMarkIcon} from '@heroicons/react/24/outline'
 
+import {sendAuthLogout} from "../utils/Request"
+
 const navigation = [
     {name: 'Home', href: '/', current: false},
     {name: 'Profile', href: '/profile', current: false}
@@ -25,6 +27,17 @@ export default function NavigationBar(props) {
 
     if (props.hideLoginButton) {
         profile.showLoginButton = false;
+    }
+
+    const handleLogout = (e) => {
+        sendAuthLogout().then(result => {
+            if(result.ok){
+                window.location.href = "/"
+            }
+            else{
+                result.json().then(alert);
+            }
+        });
     }
 
     return (
@@ -138,12 +151,12 @@ export default function NavigationBar(props) {
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({active}) => (
-                                                    <a
-                                                        href="/"
+                                                    <div
+                                                        onClick={handleLogout}
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Sign out
-                                                    </a>
+                                                    </div>
                                                 )}
                                             </Menu.Item>
                                         </Menu.Items>

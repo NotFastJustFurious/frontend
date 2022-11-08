@@ -15,6 +15,8 @@ export default function Register() {
     const [gender, setGender] = useState("");
 
     let onSubmit = (e) => {
+        e.preventDefault();
+
 
         sendAuthRegister({username, firstName, lastName, password, dob, gender}).then(result => {
             if (result.ok) {
@@ -36,9 +38,6 @@ export default function Register() {
             window.location.href = "/profile";
         }, 1000);
     }
-
-    console.log(username, password, firstName, lastName, gender, dob);
-    console.log(error);
 
     if (!success) {
         return (
@@ -162,7 +161,7 @@ export default function Register() {
 
                                 <div className="bg-gray-50 text-center">
                                     <button
-                                        type="button"
+                                        type="submit"
                                         className="group relative flex w-full justify-center rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                         onClick={onSubmit}
                                     >
