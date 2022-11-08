@@ -1,6 +1,6 @@
 import NavigationBar from "../../component/NavigationBar";
 import LogCard from "../../component/LogCard";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {sendProfileGet} from "../../utils/Request";
 
 function capitalize(str){
@@ -8,12 +8,6 @@ function capitalize(str){
 }
 
 export default function Profile() {
-    const onPro = (e) => {
-        window.location.href = "/progress";
-    }
-    const onSur = (e) => {
-        window.location.href = "/survey";
-    }
 
     const [loadState, setLoadState] = useState(false);
     const [userData, setUserData] = useState({});
@@ -40,40 +34,40 @@ export default function Profile() {
                 <div className="w-full">
                     <NavigationBar authenticated></NavigationBar>
                 </div>
+                <div className="mt-6">
                 <img
                     className="mx-auto h-24 w-24 rounded-full bg-gray-100 border-2 border-furious-green"
                     src="https://www.electrolux.co.th/globalassets/catalog/toasters--grills/e4ts1-50ss-angl-1500x1500-new.png"
                     alt="toaster"
                 />
+                </div>
                 <div className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
                     {userData.firstName || "..."} {userData.lastName}
 
                 </div>
-                <div className="mt-2 text-center text-sm text-gray-600">
-                    <a href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
-                        {userData.type ? capitalize(userData.type) : "..."}
-                    </a>
+                <div className="mt-1 text-center text-m text-gray-600">
+                    {userData.type ? capitalize(userData.type) : "..."}
                 </div>
 
-                <div className="flex flex-row items-center justify-center">
+                <div className="flex flex-row items-center justify-center mt-4">
                     <div>
                         <button
                             type="button"
-                            className="rounded-full w-24 bg-furious-green"
-                            onClick={onSur}>
+                            className="rounded-full w-30 min-h-4 py-2 px-6 bg-furious-green"
+                            onClick={() => window.location.href = "/progress"}>
                             Take Survey
                         </button>
                     </div>
                     <div>
                         <button
                             type="button"
-                            className="rounded-full w-24 bg-furious-green"
-                            onClick={onPro}>
+                            className="rounded-full w-30 min-h-4 py-2 px-6 ml-2 bg-furious-green"
+                            onClick={() => window.location.href = "/survey"}>
                             Progress
                         </button>
                     </div>
                 </div>
-                <LogCard className="flex-grow w-full border-t-2 mt-16 p-8 overflow-y-scroll"></LogCard>
+                <LogCard className="flex-grow w-full border-t-2 mt-4 p-8 overflow-y-scroll"></LogCard>
             </div>
         </>
     )

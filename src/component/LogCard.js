@@ -1,6 +1,7 @@
 export default function LogCard(props) {
     let border = true;
     let additionalClasses = ""
+    let limit = 100;
 
     let messages: { author: string, content: string, time: string }[] = [
         {
@@ -83,9 +84,15 @@ export default function LogCard(props) {
         additionalClasses = " " + props.className;
     }
 
+    if(props.limit){
+        this.limit = props.limit;
+    }
+
     return <div className={"flex flex-col overflow-y-scroll" + additionalClasses}>
         {
             messages.map((message) => {
+                if(limit <= 0) return;
+                limit--;
                 return <div
                     className={"flex flex-row m-2 items-center text-center p-5 rounded-2xl hover:bg-furious-green-3 transition" + (border ? " outline outline-2 outline-furious-green-3" : "")}>
                     <div className="min-w-fit pr-8">

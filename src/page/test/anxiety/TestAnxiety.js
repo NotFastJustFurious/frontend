@@ -1,5 +1,5 @@
 import NavigationBar from "../../../component/NavigationBar";
-
+//TODO a tag error(no href) and change to maps
 export default function Survey() {
     return (
         <>
@@ -9,21 +9,21 @@ export default function Survey() {
                     Anxiety Test
                 </div>
                 <div className="flex flex-col item-left divide-y divide-furious-green">
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500">
+                    <div className="font-medium text-indigo-600 hover:text-indigo-500">
                         Question 1
-                    </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500">
+                    </div>
+                    <div className="font-medium text-indigo-600 hover:text-indigo-500">
                         Question 2
-                    </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500">
+                    </div>
+                    <div className="font-medium text-indigo-600 hover:text-indigo-500">
                         Question 3
-                    </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500">
+                    </div>
+                    <div className="font-medium text-indigo-600 hover:text-indigo-500">
                         Question 4
-                    </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500">
+                    </div>
+                    <div className="font-medium text-indigo-600 hover:text-indigo-500">
                         Question 5
-                    </a>
+                    </div>
                 </div>
             </div>
         </>

@@ -16,6 +16,7 @@ import TestDepression from "./page/test/depression/TestDepression";
 import TestOCD from "./page/test/ocd/TestOCD";
 import TestPanic from "./page/test/panic/TestPanic";
 import TestParanoia from "./page/test/paranoia/TestParanoia";
+import EditProfile from "./page/profile/EditProfile";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let routes = [
@@ -31,6 +32,9 @@ let routes = [
     }, {
         path: "/profile",
         element: <Profile/>
+    }, {
+        path: "/editprofile",
+        element: <EditProfile/>
     }, {
         path: "/chat",
         element: <Chat/>

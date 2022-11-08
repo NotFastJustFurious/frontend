@@ -8,7 +8,7 @@ export default function Survey() {
                 <div className="items-center text-center">
                     Paranoia Test
                 </div>
-                <div className="flex flex-col item-left divide-y divide-furious-green">
+                {/* <div className="flex flex-col item-left divide-y divide-furious-green">
                     <a className="font-medium text-indigo-600 hover:text-indigo-500">
                         Question 1
                     </a>
@@ -24,7 +24,7 @@ export default function Survey() {
                     <a className="font-medium text-indigo-600 hover:text-indigo-500">
                         Question 5
                     </a>
-                </div>
+                </div> */}
             </div>
         </>
     )

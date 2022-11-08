@@ -84,13 +84,13 @@ export default function NavigationBar(props) {
                                     Login
                                 </a>
 
-                                <button hidden={!profile.authenticated}
+                                {/* <button hidden={!profile.authenticated}
                                         type="button"
                                         className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                 >
                                     <span className="sr-only">View notifications</span>
                                     <BellIcon className="h-6 w-6" aria-hidden="true"/>
-                                </button>
+                                </button> */}
 
                                 {/* Profile dropdown */}
                                 <Menu as="div" className={"relative ml-3" + (profile.authenticated ? "" : " hidden")}>
@@ -119,7 +119,7 @@ export default function NavigationBar(props) {
                                             <Menu.Item>
                                                 {({active}) => (
                                                     <a
-                                                        href="/"
+                                                        href="/profile"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Your Profile
@@ -129,7 +129,7 @@ export default function NavigationBar(props) {
                                             <Menu.Item>
                                                 {({active}) => (
                                                     <a
-                                                        href="/"
+                                                        href="/editprofile"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Settings

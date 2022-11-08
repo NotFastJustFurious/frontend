@@ -1,3 +1,5 @@
+const { default: Profile } = require("../page/profile/EditProfile");
+
 const BACKEND_BASE_URL = "http://localhost:3001/api/";
 
 function sendRequest(method, path, bodyObject) {
@@ -30,6 +32,11 @@ function sendAuthRegister(data){
     return sendRequest("POST", "register", data);
 }
 
+function sendProfileEdit(data){
+    return sendRequest("PATCH", "profile", data);
+}
+
+
 function sendProfileGet() {
     return sendRequest("GET", "profile");
 }
@@ -38,3 +45,4 @@ exports.sendAuthLogin = sendAuthLogin;
 exports.sendAuthLogout = sendAuthLogout;
 exports.sendProfileGet = sendProfileGet;
 exports.sendAuthRegister = sendAuthRegister;
+exports.sendProfileEdit = sendProfileEdit;
