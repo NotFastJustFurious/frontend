@@ -4,30 +4,35 @@ export default function Survey() {
     return (
         <>
             <NavigationBar hideLoginButton></NavigationBar>
-            <div className="flex flex-col justify-center">
-                <div className="items-center text-center">
+            <div className="flex min-h-full items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-md">
+
+                <div className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
                     Surveys
                 </div>
-                <div className="flex flex-col item-left divide-y divide-furious-green">
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/anxiety">
+                <div className="flex flex-col item-left divide-y divide-gray">
+                    <a className="mt-6 indent-6 text-m text-black-600" href="/test/anxiety">
                         Anxiety Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/bipolar">
+                    <a className="mt-1 indent-6 text-m text-black-600" href="/test/bipolar">
                         Bipolar Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/depression">
+                    <a className="mt-1 indent-6 text-m text-black-600" href="/test/depression">
                         Depression Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/ocd">
+                    <a className="mt-1 indent-6 text-m text-black-600" href="/test/ocd">
                         OCD Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/panic">
+                    <a className="mt-1 indent-6 text-m text-black-600" href="/test/panic">
                         Panic Test
                     </a>
-                    <a className="font-medium text-indigo-600 hover:text-indigo-500" href="/test/paranoia">
+                    <a className="mt-1 indent-6 text-m text-black-600" href="/test/paranoia">
                         Paranoia Test
                     </a>
+                    <a className="mt-1 indent-6 text-m text-black-600" href="/test/paranoia">
+                    </a>
                 </div>
+            </div>
             </div>
         </>
     )
