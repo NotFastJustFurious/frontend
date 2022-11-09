@@ -1,4 +1,5 @@
 import NavigationBar from "../../../component/NavigationBar";
+import Test from "../../../component/Test";
 //TODO a tag error(no href) and change to maps
 export default function Survey() {
     return (
@@ -9,6 +10,7 @@ export default function Survey() {
                     Anxiety Test
                 </div>
                 <div className="flex flex-col item-left divide-y divide-furious-green">
+                <Test className="flex-grow w-full border-t-2 mt-4 p-8 overflow-y-scroll"></Test>
                     <div className="font-medium text-indigo-600 hover:text-indigo-500">
                         You feel anxious, worried, or restless?
                         <br></br>

@@ -3,11 +3,11 @@ export default function LogCard(props) {
     let additionalClasses = ""
     let limit = 100;
 
-    let messages: { author: string, content: string, time: string }[] = [
+    let messages = [
         {
             author: "John Doe",
             content: "Why",
-            time: "10 minutes ago",
+            time: "10 minutes ago"
         },
         {
             author: "John Die",
@@ -24,53 +24,7 @@ export default function LogCard(props) {
             content: "Please just kill me already!",
             time: "24 minutes ago"
         },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        },
-        {
-            author: "John Die",
-            content: "Please just kill me already!",
-            time: "24 minutes ago"
-        }
     ]
-
 
     if (props.messages) {
         messages = props.messages;
@@ -91,7 +45,7 @@ export default function LogCard(props) {
     return <div className={"flex flex-col overflow-y-scroll" + additionalClasses}>
         {
             messages.map((message) => {
-                if(limit <= 0) return;
+                if(limit <= 0) return("");
                 limit--;
                 return <div
                     className={"flex flex-row m-2 items-center text-center p-5 rounded-2xl hover:bg-furious-green-3 transition" + (border ? " outline outline-2 outline-furious-green-3" : "")}>

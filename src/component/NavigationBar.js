@@ -1,12 +1,13 @@
 import {Fragment} from 'react'
 import {Disclosure, Menu, Transition} from '@headlessui/react'
-import {Bars3Icon, BellIcon, XMarkIcon} from '@heroicons/react/24/outline'
+import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
 
 import {sendAuthLogout} from "../utils/Request"
 
 const navigation = [
     {name: 'Home', href: '/', current: false},
-    {name: 'Profile', href: '/profile', current: false}
+    {name: 'Profile', href: '/profile', current: false},
+    {name: 'Chat', href: '/chat', current: false}
 ]
 
 const profile = {
@@ -52,19 +53,19 @@ export default function NavigationBar(props) {
                                     className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-furious-green-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
-                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true"/>
+                                        <XMarkIcon className="block h-6 w-6 text-gray-600" aria-hidden="true"/>
                                     ) : (
-                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true"/>
+                                        <Bars3Icon className="block h-6 w-6 text-gray-600" aria-hidden="true"/>
                                     )}
                                 </Disclosure.Button>
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
-                                    {/* <img
+                                    <img
                                         className="block h-8 w-auto lg:hidden"
-                                        src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=500"
+                                        src="/icon.svg"
                                         alt="Your Company"
-                                    /> */}
+                                    />
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
@@ -96,15 +97,6 @@ export default function NavigationBar(props) {
                                 >
                                     Login
                                 </a>
-
-                                {/* <button hidden={!profile.authenticated}
-                                        type="button"
-                                        className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                >
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true"/>
-                                </button> */}
-
                                 {/* Profile dropdown */}
                                 <Menu as="div" className={"relative ml-3" + (profile.authenticated ? "" : " hidden")}>
                                     <div>
@@ -112,7 +104,7 @@ export default function NavigationBar(props) {
                                             className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                             <span className="sr-only">Open user menu</span>
                                             <img
-                                                className="h-8 w-8 rounded-full"
+                                                className="h-8 w-8 rounded-full "
                                                 src={profile.pictureUrl}
                                                 alt=""
                                             />
