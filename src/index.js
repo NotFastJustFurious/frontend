@@ -17,6 +17,8 @@ import TestOCD from "./page/test/ocd/TestOCD";
 import TestPanic from "./page/test/panic/TestPanic";
 import TestParanoia from "./page/test/paranoia/TestParanoia";
 import EditProfile from "./page/profile/EditProfile";
+import FeedBack from './page/feedBack/FeedBack';
+import FindDoctor from './page/findDoctor/FindDoctor';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let routes = [
@@ -62,6 +64,12 @@ let routes = [
     }, {
         path: "/test/paranoia",
         element: <TestParanoia/>
+    }, {
+        path: "/feedBack",
+        element: <FeedBack/>
+    }, {
+        path: "/findDoctor",
+        element: <FindDoctor/>
     }
 ];
 
