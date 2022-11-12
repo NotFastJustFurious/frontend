@@ -41,8 +41,18 @@ function sendProfileGet() {
     return sendRequest("GET", "profile");
 }
 
-function sendTherapySession() {
-    return sendRequest("GET", "therapy/create");
+function sendTherapySessionGet(){
+    return sendRequest("GET", "therapy");
+}
+
+function sendTherapySendMessagePatient (message){
+    return sendRequest("POST","therapy/message", {
+        message
+    })
+}
+
+function sendCreateTherapySession() {
+    return sendRequest("POST", "therapy/create");
 }
 
 exports.sendAuthLogin = sendAuthLogin;
@@ -50,4 +60,6 @@ exports.sendAuthLogout = sendAuthLogout;
 exports.sendProfileGet = sendProfileGet;
 exports.sendAuthRegister = sendAuthRegister;
 exports.sendProfileEdit = sendProfileEdit;
-exports.sendTherapySession = sendTherapySession;
+exports.sendTherapySessionGet = sendTherapySessionGet;
+exports.sendCreateTherapySession = sendCreateTherapySession;
+exports.sendTherapySendMessagePatient = sendTherapySendMessagePatient;
