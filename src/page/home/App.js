@@ -11,7 +11,13 @@ function App() {
                 </div>
                 <div className={"text-2xl md:text-4xl pt-10"}>
                     toaster toaster toasting things
-                </div>
+                    <br></br>
+                    is your head as hot and toasty as this toaster?
+                    <br></br>
+                    stop being a toasty toaster and join us!
+                    <br></br>
+                    moew moew
+                </div> 
             </div>
             <div>
                 <img className={"w-full"} src={"https://www.electrolux.co.th/globalassets/catalog/toasters--grills/e4ts1-50ss-angl-1500x1500-new.png"} alt="Toaster"/>
