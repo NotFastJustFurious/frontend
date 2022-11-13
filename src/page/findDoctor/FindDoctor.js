@@ -24,7 +24,7 @@ export default function findDoctor() {
 
                     <div className="p-4 flex space-x-4 justify-center items-center">
                         <button className="w-1/2 px-4 py-3 text-center text-white bg-furious-green rounded-lg hover:bg-pink-700 hover:text-white font-bold text-sm"
-                            onClick={() => window.location.href = "/findDoc"}>
+                            onClick={() => window.location.href = "/chat"}>
                             Find!
                         </button>
                     </div>

@@ -12,6 +12,7 @@ export default function Chat() {
 
     if (!loaded) {
         setLoaded(true);
+        
         sendTherapySessionGet().then(res => {
             if (res.ok) {
                 res.json().then(resData => {
@@ -23,7 +24,7 @@ export default function Chat() {
 
     let messages = []
 
-    if (data != undefined) {
+    if (data !== undefined) {
         for (let entry of data.messages) {
             console.log(entry)
             entry.our = entry.author === data.patient;

@@ -1,13 +1,13 @@
 import NavigationBar from "../../component/NavigationBar";
 import { useState } from "react";
 import { FaStar } from 'react-icons/fa' // (https://react-icons.github.io/react-icons)
+import { sendAddRecord } from "../../utils/Request";
 
 export default function FeedBack() {
 
     const [currentValue, setCurrentValue] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
-
     const handleClick = value => {
         setCurrentValue(value)
     }
@@ -19,6 +19,21 @@ export default function FeedBack() {
     const handleMouseLeave = () => {
         setHoverValue(undefined)
     }
+
+    // let onSubmit = (e) =>
+    //     e.preventDefault();
+
+    //     sendAddRecord({}).then(result => {
+    //         if (result.ok) {
+    //             setSuccess(true);
+    //         }
+    //         else{
+    //             result.json().then(data => {
+    //                 setError(data.error);
+    //             })
+    //         }
+    //     });
+
     return (
         <>
             <div className="justify-center item-top">
@@ -85,3 +100,4 @@ export default function FeedBack() {
         </>
     )
 }
+

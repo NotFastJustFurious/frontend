@@ -28,11 +28,11 @@ function sendAuthLogout() {
  * @param data {{username, firstName, lastName, password, gender, dob}}
  * @returns {Promise<Response>}
  */
-function sendAuthRegister(data){
+function sendAuthRegister(data) {
     return sendRequest("POST", "register", data);
 }
 
-function sendProfileEdit(data){
+function sendProfileEdit(data) {
     return sendRequest("PATCH", "profile", data);
 }
 
@@ -41,11 +41,11 @@ function sendProfileGet() {
     return sendRequest("GET", "profile");
 }
 
-function sendTherapySessionGet(){
+function sendTherapySessionGet() {
     return sendRequest("GET", "therapy");
 }
 
-function sendTherapySendMessagePatient (message){
+function sendTherapySendMessagePatient (message) {
     return sendRequest("POST","therapy/message", {
         message
     })
@@ -53,6 +53,10 @@ function sendTherapySendMessagePatient (message){
 
 function sendCreateTherapySession() {
     return sendRequest("POST", "therapy/create");
+}
+
+function sendAddRecord(data) {
+    return sendRequest("GET", "record/add");
 }
 
 exports.sendAuthLogin = sendAuthLogin;
@@ -63,3 +67,4 @@ exports.sendProfileEdit = sendProfileEdit;
 exports.sendTherapySessionGet = sendTherapySessionGet;
 exports.sendCreateTherapySession = sendCreateTherapySession;
 exports.sendTherapySendMessagePatient = sendTherapySendMessagePatient;
+exports.sendAddRecord = sendAddRecord;
