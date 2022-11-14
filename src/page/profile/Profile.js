@@ -53,14 +53,6 @@ export default function Profile() {
                     <div>
                         <button
                             type="button"
-                            className="rounded-full w-30 min-h-4 py-2 px-6 bg-furious-green"
-                            onClick={() => window.location.href = "/survey"}>
-                            Take Survey
-                        </button>
-                    </div>
-                    <div>
-                        <button
-                            type="button"
                             className="rounded-full w-30 min-h-4 py-2 px-6 ml-2 bg-furious-green"
                             onClick={() => window.location.href = "/progress"}>
                             Progress

@@ -21,7 +21,7 @@ export default function Login() {
     const handleSubmit = (e) => {
         sendAuthLogin(email, password).then((response) => {
             if(response.ok){
-                window.location.href = "/finddoctor";
+                window.location.href = "/Profile";
             }
             else{
                 alert("Invalid credentials");
