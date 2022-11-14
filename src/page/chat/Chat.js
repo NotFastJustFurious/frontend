@@ -51,12 +51,18 @@ export default function Chat() {
 
     return (
         <>
-            <div className="flex flex-col h-screen items-center justify-center ">
+            <div className="flex flex-col h-screen items-center justify-center bg-furious-green-3">
                 <div className="w-full">
                     <NavigationBar authenticated></NavigationBar>
                 </div>
-                <div className="text-2xl font-bold w-full flex flex-row justify-center items-center h-16 bg-furious-green-3">
-                    <div>
+                <div className="flex felx-row justify-center item-center h-16 w-full bg-furious-green-2">
+                    <div className="flex justify-self-start item-start">
+                        <button type="button" className="rounded-full w-25 min-h-3 py-1 px-3 ml-2 bg-furious-green-4"
+                            onClick={() => window.location.href = "/Profile"}>
+                            End Session
+                        </button>
+                    </div>
+                    <div className="text-2xl font-bold w-full flex flex-row justify-center items-center">
                         Therapist A
                     </div>
                 </div>
