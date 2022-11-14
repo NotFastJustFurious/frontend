@@ -35,7 +35,7 @@ export default function Register() {
     console.log("Success: " + success);
     if (success) {
         setTimeout(() => {
-            window.location.href = "/profile";
+            window.location.href = "/Survey";
         }, 3000);
     }
 
@@ -165,7 +165,7 @@ export default function Register() {
                                         className="group relative flex w-full justify-center rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                         onClick={onSubmit}
                                     >
-                                        Sign Up
+                                        Next
                                     </button>
                                 </div>
                             </div>
