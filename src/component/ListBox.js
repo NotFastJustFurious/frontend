@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Listbox, Transition } from "@headlessui/react";
+import { sendProfileGet } from "../utils/Request";
 
-const types = ["Anxiety", "OCD", "Paranoia", "Panic", "Depression", "Bipolar"];
+export default function ListBox(props) {
+  const [selectedType, setSelectedType] = useState("");
+  const [types, setTypes] = useState(["Loading..."]);
+  props.setSelectedType(selectedType)
+  
+  useEffect(() => {
+    sendProfileGet().then(result => {
+      result.json().then(body => {
+        let conditions = body.data.condition;
+        setTypes(conditions)
 
-export default function ListBox() {
-  const [selectedType, setSelectedType] = useState("Anxiety");
+        if(conditions.length > 0)
+          setSelectedType(conditions[0])
+        console.log(body)
+      });
+    });
+  }, []);
 
   return (
     <div>
@@ -34,25 +48,22 @@ export default function ListBox() {
                     <Listbox.Option key={type} value={type}>
                       {({ selected, active }) => (
                         <div
-                          className={`${
-                            active
-                              ? "text-white bg-furious-green"
-                              : "text-gray-900"
-                          } cursor-default select-none relative py-2 pl-10 pr-4`}
+                          className={`${active
+                            ? "text-white bg-furious-green"
+                            : "text-gray-900"
+                            } cursor-default select-none relative py-2 pl-10 pr-4`}
                         >
                           <span
-                            className={`${
-                              selected ? "font-semibold" : "font-normal"
-                            }`}
+                            className={`${selected ? "font-semibold" : "font-normal"
+                              }`}
                           >
                             {type}
                           </span>
 
                           {selected && (
                             <span
-                              className={`${
-                                active ? "text-white" : "text-furious-green"
-                              } absolute inset-y-0 left-0 flex items-center pl-2`}
+                              className={`${active ? "text-white" : "text-furious-green"
+                                } absolute inset-y-0 left-0 flex items-center pl-2`}
                             >
                               <svg
                                 className="h-5 w-5"

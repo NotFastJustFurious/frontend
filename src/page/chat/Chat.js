@@ -1,50 +1,75 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { sendTherapySessionGet } from "../../utils/Request";
 import { sendTherapySendMessagePatient } from "../../utils/Request";
+import { getCookie, getArgument } from "../../utils/Cookie";
 
-
+import SocketClient from "../../utils/SocketClient"
 import NavigationBar from "../../component/NavigationBar";
 
-export default function Chat() {
-    const [loaded, setLoaded] = useState(false);
-    const [data, setData] = useState(undefined);
-    const [textBoxMessage, setTextBoxMessage] = useState("");
 
-    if (!loaded) {
-        setLoaded(true);
-        
+export default function Chat() {
+    const dataRef = useRef({
+        messages: []
+    });
+    const [renderCounter, setRenderCounter] = useState(0);
+
+    let data = dataRef.current;
+    let messages = dataRef.current.messages;
+
+    const [textBoxMessage, setTextBoxMessage] = useState("");
+    const socketRef = useRef();
+
+    const forceRender = (() => {
+        setRenderCounter(Math.random());
+    }).bind(this);
+
+    useEffect(() => {
         sendTherapySessionGet().then(res => {
             if (res.ok) {
                 res.json().then(resData => {
-                    setData(resData.data);
+                    data.title = resData.data.therapist;
                 });
             }
         })
-    }
 
-    let messages = []
+        socketRef.current = new SocketClient();
+        socketRef.current.handleChat((message) => {
+            data.messages.push({
+                type: 0,
+                message
+            })
+            forceRender();
+            setTimeout(forceRender, 1000);
+        });
+        socketRef.current.auth(getCookie("sessionId")).then(result => {
+            console.log(`auth: ${result}`);
+        });
 
-    if (data !== undefined) {
-        for (let entry of data.messages) {
-            console.log(entry)
-            entry.our = entry.author === data.patient;
+        let patient = getArgument("patient");
+        console.log("patient", patient);
+        if (patient != null) {
+            socketRef.current.emitSelect(patient);
         }
 
-        console.log(data);
-
-        messages = data.messages;
-    }
+    }, []);
 
     const handleSubmit = (e) => {
+        e.preventDefault();
         if (textBoxMessage === "") return;
-        sendTherapySendMessagePatient(textBoxMessage);
+        socketRef.current.emitChat(textBoxMessage);
+
+        data.messages.push({
+            type: 1,
+            message: textBoxMessage
+        })
+        forceRender();
         setTextBoxMessage("");
-        window.location.href = window.location.href; //TODO do a proper refresh without refreshing the page
     };
 
     useEffect(() => {
         setTimeout(() => {
             let box = document.getElementById("chat-box");
+            if (!box || !box.lastChild) return;
             box.lastChild.scrollIntoView();
         }, 10);
     });
@@ -63,7 +88,7 @@ export default function Chat() {
                         </button>
                     </div>
                     <div className="text-2xl font-bold w-full flex flex-row justify-center items-center">
-                        Therapist A
+                        {data.title}
                     </div>
                 </div>
 
@@ -72,8 +97,8 @@ export default function Chat() {
                     <div className="flex flex-col flex-grow p-4 overflow-auto">
                         <div className="p-2">
                             <div className="chat-box" id="chat-box">
-                                {messages.map((message) => (
-                                    <div key={message.timestamp} className={`${message.our ? 'mr-2 py-3 px-4 bg-furious-green rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white ml-auto right' : 'left'}  my-3 w-fit shadow-lg p-4 rounded-lg`}>
+                                {messages.map((message, index) => (
+                                    <div key={index} className={`${message.type ? 'mr-2 py-3 px-4 bg-furious-green rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white ml-auto right' : 'left'}  my-3 w-fit shadow-lg p-4 rounded-lg`}>
                                         {/* <span className={`${message.id === "2" ? '  text-green-500' : 'text-orange-500'} rounded font-extrabold`}>{message.id}</span> */}
                                         <p className="md:text-base">{message.message}</p>
                                     </div>
@@ -82,10 +107,10 @@ export default function Chat() {
                         </div>
                     </div>
 
-                    <div class="bg-gray-300 p-4">
+                    <form class="bg-gray-300 p-4">
                         <input type="text" className="w-2/3 h-full rounded-l-lg" value={textBoxMessage} onChange={e => setTextBoxMessage(e.target.value)}></input>
-                        <button className="w-1/3 h-full outline outline-1 outline-furious-green-2 rounded-r-lg" onClick={handleSubmit}>Submit</button>
-                    </div>
+                        <input type="submit" className="w-1/3 h-full outline outline-1 outline-furious-green-2 rounded-r-lg" onClick={handleSubmit}></input>
+                    </form>
                 </div>
             </div>
         </>

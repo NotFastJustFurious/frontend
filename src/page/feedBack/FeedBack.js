@@ -10,12 +10,15 @@ export default function FeedBack() {
 
     const [note, setNote] = useState("")
     const patient = "fake_patient"
+    const [selectedType, setSelectedType] = useState("")
+    console.log(selectedType)
 
     const [currentValue, setCurrentValue] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
     const handleClick = value => {
         setCurrentValue(value)
+        console.log(currentValue)
     }
 
     const handleMouseOver = newHoverValue => {
@@ -26,8 +29,9 @@ export default function FeedBack() {
         setHoverValue(undefined)
     }
 
+
     let onSubmit = (e) => {
-        sendAddRecord(patient, note).then(result => {
+        sendAddRecord(patient, note, currentValue, selectedType).then(result => {
             if (result.ok) {
                 setSuccess(true);
             }
@@ -38,27 +42,17 @@ export default function FeedBack() {
             }
         });
     };
+    
     onSubmit = onSubmit.bind(this);
-
-    // let onSubmit = (e) =>
-    //     e.preventDefault();
-
-    //     sendAddRecord({}).then(result => {
-    //         if (result.ok) {
-    //             setSuccess(true);
-    //         }
-    //         else{
-    //             result.json().then(data => {
-    //                 setError(data.error);
-    //             })
-    //         }
-    //     });
 
     return (
         <>
             <div className="justify-center item-top">
                 <NavigationBar authenticated></NavigationBar>
             </div>
+            <div className="Comment-text">
+                <ListBox setSelectedType={setSelectedType}></ListBox>
+             </div>
             <div className="flex flex-col justify-center item-center">
                 <div className="flex justify-center item-center">
                     <a className="text-furious-green text-2xl text-bold"> Feedback </a>
@@ -82,7 +76,6 @@ export default function FeedBack() {
                         )
                     })}
                     <div className="">
-                        <ListBox></ListBox>
                     </div>
                 </div>
                 <br></br>
