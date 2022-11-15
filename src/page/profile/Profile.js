@@ -34,13 +34,6 @@ export default function Profile() {
                 <div className="w-full">
                     <NavigationBar authenticated></NavigationBar>
                 </div>
-                <div className="mt-6">
-                <img
-                    className="mx-auto h-24 w-24 rounded-full bg-gray-100 border-2 border-furious-green"
-                    src="https://www.electrolux.co.th/globalassets/catalog/toasters--grills/e4ts1-50ss-angl-1500x1500-new.png"
-                    alt="toaster"
-                />
-                </div>
                 <div className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
                     {userData.firstName || "..."} {userData.lastName}
 
