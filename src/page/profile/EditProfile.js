@@ -84,7 +84,7 @@ export default function Profile() {
 
                 </div>
                 <div className="mt-2 text-center text-sm text-gray-600">
-                    <a href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+                    <a className="font-medium text-indigo-600 hover:text-indigo-500">
                         {userType ? capitalize(userType) : "..."}
                     </a>
                 </div>
