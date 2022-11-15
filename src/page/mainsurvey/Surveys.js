@@ -1,5 +1,5 @@
 import NavigationBar from "../../component/NavigationBar";
-//Survey Questions is arrange by Anxiety, Depression, PTSD, COD, Eating Disorder.
+//Survey Questions is arrange by Anxiety, Depression, PTSD, OCD, Eating Disorder.
 //Where it is weigth 1-5 score of each category (Max 15 for each category)
 
 export default function Survey() {
@@ -29,24 +29,24 @@ export default function Survey() {
             ptsdscore2 = parseInt(getRadioSelectedValue('ptsd-score-2')),
             ptsdscore3 = parseInt(getRadioSelectedValue('ptsd-score-3')),
 
-            codscore1 = parseInt(getRadioSelectedValue('cot-score-1')),
-            codscore2 = parseInt(getRadioSelectedValue('cot-score-2')),
-            codscore3 = parseInt(getRadioSelectedValue('cot-score-3')),
+            ocdscore1 = parseInt(getRadioSelectedValue('ocd-score-1')),
+            ocdscore2 = parseInt(getRadioSelectedValue('ocd-score-2')),
+            ocdscore3 = parseInt(getRadioSelectedValue('ocd-score-3')),
 
             edscore1 = parseInt(getRadioSelectedValue('ed-score-1')),
             edscore2 = parseInt(getRadioSelectedValue('ed-score-2')),
-            edscore3 = parseInt(getRadioSelectedValue('ed-score-3'));
+            edscore3 = parseInt(getRadioSelectedValue('ed-score-3')),
 
-            anxtotal = 0;
-            deptotal = 0;
-            ptsdtotal = 0;
-            codtotal = 0;
+            anxtotal = 0,
+            deptotal = 0,
+            ptsdtotal = 0,
+            ocdtotal = 0,
             edtotal = 0;
 
         anxtotal = anxscore1 + anxscore2;
         deptotal = depscore1 + depscore2;
         ptsdtotal = ptsdscore1 + ptsdscore2;
-        codtotal = codscore1 + codscore2;
+        ocdtotal = ocdscore1 + ocdscore2;
         edtotal = edscore1 + edscore2;
     };
 
@@ -154,6 +154,402 @@ export default function Survey() {
                             name="anx-score-3"
                         />Always
                     </div>    
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    Depression - Do you feel sad, depressed, or hopeless?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="dep-score-1"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="dep-score-1"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="dep-score-1"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="dep-score-1"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="dep-score-1"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    Depression - Do you feel like you have no energy?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="dep-score-2"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="dep-score-2"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="dep-score-2"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="dep-score-2"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="dep-score-2"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    Depression - Do you feel like you have no interest in things?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="dep-score-3"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="dep-score-3"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="dep-score-3"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="dep-score-3"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="dep-score-3"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    PTSD - Do you have nightmares?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ptsd-score-1"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ptsd-score-1"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ptsd-score-1"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ptsd-score-1"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ptsd-score-1"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    PTSD - Do you have flashbacks?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ptsd-score-2"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ptsd-score-2"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ptsd-score-2"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ptsd-score-2"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ptsd-score-2"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    PTSD - Do you have trouble sleeping?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ptsd-score-3"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ptsd-score-3"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ptsd-score-3"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ptsd-score-3"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ptsd-score-3"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    OCD - Do you have repetitive thoughts?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ocd-score-1"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ocd-score-1"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ocd-score-1"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ocd-score-1"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ocd-score-1"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    OCD - Do you worry excessively about dirt, germs, or chemicals?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ocd-score-2"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ocd-score-2"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ocd-score-2"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ocd-score-2"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ocd-score-2"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    OCD - Do you wash yourself or things around you excessively?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ocd-score-3"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ocd-score-3"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ocd-score-3"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ocd-score-3"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ocd-score-3"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    Eating Disorder - Do you feel like you have to eat a certain amount of food?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ed-score-1"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ed-score-1"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ed-score-1"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ed-score-1"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ed-score-1"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    Eating Disorder - Do you make yourself sick (induce vomiting) because you feel uncomfortably full?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ed-score-2"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ed-score-2"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ed-score-2"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ed-score-2"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ed-score-2"
+                        />Always
+                    </div>
+                </div>
+
+                <div className="text-xs w-full flex flex-row justify-between">
+                    Eating Disorder - Would you say that food dominates your life?
+                </div>
+                <div className="text-xs w-full flex flex-row justify-between">
+                    <div>
+                        <input
+                            type="radio"
+                            value="1"
+                            name="ed-score-3"
+                        />Never
+                        <input
+                            type="radio"
+                            value="2"
+                            name="ed-score-3"
+                        />Rarely
+                        <input
+                            type="radio"
+                            value="3"
+                            name="ed-score-3"
+                        />Sometimes
+                        <input
+                            type="radio"
+                            value="4"
+                            name="ed-score-3"
+                        />Often
+                        <input
+                            type="radio"
+                            value="5"
+                            name="ed-score-3"
+                        />Always
+                    </div>
                 </div>
 
                 <button id="calculate" value="calculate" onClick={onClick}>Confirm</button>
