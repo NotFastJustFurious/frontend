@@ -55,8 +55,8 @@ function sendCreateTherapySession() {
     return sendRequest("POST", "therapy/create");
 }
 
-function sendAddRecord(data) {
-    return sendRequest("GET", "record/add");
+function sendAddRecord(patient, note) {
+    return sendRequest("POST", "record/add", {patient, note});
 }
 
 exports.sendAuthLogin = sendAuthLogin;

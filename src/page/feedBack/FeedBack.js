@@ -5,6 +5,11 @@ import { sendAddRecord } from "../../utils/Request";
 import ListBox from "../../component/ListBox";
 
 export default function FeedBack() {
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
+    const [note, setNote] = useState("")
+    const patient = "fake_patient"
 
     const [currentValue, setCurrentValue] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
@@ -20,6 +25,20 @@ export default function FeedBack() {
     const handleMouseLeave = () => {
         setHoverValue(undefined)
     }
+
+    let onSubmit = (e) => {
+        sendAddRecord(patient, note).then(result => {
+            if (result.ok) {
+                setSuccess(true);
+            }
+            else {
+                result.json().then(data => {
+                    setError(data.error);
+                })
+            }
+        });
+    };
+    onSubmit = onSubmit.bind(this);
 
     // let onSubmit = (e) =>
     //     e.preventDefault();
@@ -68,11 +87,17 @@ export default function FeedBack() {
                 </div>
                 <br></br>
                 <div className="flex flex-col justify-center item-center">
-                <textarea placeholder="Doctor description" className="border-1 border-solid border-grey rounded-r-4 p-10 mx-20 min-h-100 w-300"/>
+                    <textarea
+                        placeholder="Doctor description"
+                        className="border-1 border-solid border-grey rounded-r-4 p-10 mx-20 min-h-100 w-300"
+                        onChange={e => setNote(e.target.value)}
+                    />
                 </div>
                 <br></br>
                 <div className="flex flex-row justify-end w-full">
-                    <button className="flex w-1/8 justify-end item-end rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <button
+                        onClick={onSubmit}
+                        className="flex w-1/8 justify-end item-end rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Submit
                     </button>
                 </div>
