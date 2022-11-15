@@ -35,7 +35,7 @@ export default function Register() {
     console.log("Success: " + success);
     if (success) {
         setTimeout(() => {
-            window.location.href = "/Survey";
+            window.location.href = "/mainsurvey";
         }, 3000);
     }
 
