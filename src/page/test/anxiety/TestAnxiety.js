@@ -1,5 +1,5 @@
 import NavigationBar from "../../../component/NavigationBar";
-import Test from "../../../component/Test";
+import Test from "../../../component/TestSurvey";
 //TODO a tag error(no href) and change to maps
 export default function Survey() {
     return (
