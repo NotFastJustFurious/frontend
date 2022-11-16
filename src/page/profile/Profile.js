@@ -1,5 +1,6 @@
 import NavigationBar from "../../component/NavigationBar";
 import LogCard from "../../component/LogCard";
+// import SlideTab from "../../component/Tab";
 import {useState} from "react";
 import {sendProfileGet} from "../../utils/Request";
 
@@ -52,6 +53,7 @@ export default function Profile() {
                         </button>
                     </div>
                 </div>
+                {/* <SlideTab></SlideTab> */}
                 <LogCard className="flex-grow w-full border-t-2 mt-4 p-8 overflow-y-scroll"></LogCard>
             </div>
         </>

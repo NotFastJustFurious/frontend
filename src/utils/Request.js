@@ -63,6 +63,10 @@ function sendRecordGet() {
     return sendRequest("GET", "record")
 }
 
+function sendSurveyResponse(data) {
+    return sendRequest("POST", "survey/add", data)
+}
+
 exports.sendAuthLogin = sendAuthLogin;
 exports.sendAuthLogout = sendAuthLogout;
 exports.sendProfileGet = sendProfileGet;
@@ -73,4 +77,5 @@ exports.sendCreateTherapySession = sendCreateTherapySession;
 exports.sendTherapySendMessagePatient = sendTherapySendMessagePatient;
 exports.sendAddRecord = sendAddRecord;
 exports.sendRecordGet = sendRecordGet;
+exports.sendSurveyResponse = sendSurveyResponse;
 

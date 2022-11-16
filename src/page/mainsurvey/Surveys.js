@@ -1,8 +1,14 @@
+import { useState } from "react";
 import NavigationBar from "../../component/NavigationBar";
+import { sendSurveyResponse } from "../../utils/Request";
 //Survey Questions is arrange by Anxiety, Depression, PTSD, OCD, Eating Disorder.
 //Where it is weigth 1-5 score of each category (Max 15 for each category)
 
 export default function Survey() {
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
+
     const getRadioSelectedValue = function(radioGroup) {
         var radios = document.getElementsByName(radioGroup),
             val;
@@ -13,7 +19,7 @@ export default function Survey() {
             }
         }
         return val;
-    };
+    }
 
     const onClick = function(event) {
         event.preventDefault();
@@ -49,9 +55,10 @@ export default function Survey() {
         ptsdtotal = ptsdscore1 + ptsdscore2;
         ocdtotal = ocdscore1 + ocdscore2;
         edtotal = edscore1 + edscore2;
-
+        // console.log("anxtotal - ",anxtotal,"deptotal - ",deptotal,"ptsdtotal - ", ptsdtotal,"ocdtotal - ",ocdtotal,"edtotal - ",edtotal);
         window.location.href = "/profile";
-    };
+    }
+
 
     return (
         <>
