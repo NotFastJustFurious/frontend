@@ -50,11 +50,11 @@ export default function Survey() {
             ocdtotal = 0,
             edtotal = 0;
 
-        anxtotal = anxscore1 + anxscore2;
-        deptotal = depscore1 + depscore2;
-        ptsdtotal = ptsdscore1 + ptsdscore2;
-        ocdtotal = ocdscore1 + ocdscore2;
-        edtotal = edscore1 + edscore2;
+        anxtotal = anxscore1 + anxscore2 + anxscore3;
+        deptotal = depscore1 + depscore2 + depscore3;
+        ptsdtotal = ptsdscore1 + ptsdscore2 + ptsdscore3;
+        ocdtotal = ocdscore1 + ocdscore2 + ocdscore3;
+        edtotal = edscore1 + edscore2 + edscore3;
         // console.log("anxtotal - ",anxtotal,"deptotal - ",deptotal,"ptsdtotal - ", ptsdtotal,"ocdtotal - ",ocdtotal,"edtotal - ",edtotal);
         window.location.href = "/profile";
     }
