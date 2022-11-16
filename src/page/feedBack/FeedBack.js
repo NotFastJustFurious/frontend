@@ -1,7 +1,8 @@
 import NavigationBar from "../../component/NavigationBar";
-import { useState } from "react";
+import { useState , useRef} from "react";
 import { FaStar } from 'react-icons/fa' // (https://react-icons.github.io/react-icons)
 import { sendAddRecord } from "../../utils/Request";
+import { getArgument } from "../../utils/Cookie";
 import ListBox from "../../component/ListBox";
 
 export default function FeedBack() {
@@ -9,16 +10,18 @@ export default function FeedBack() {
     const [error, setError] = useState(false);
 
     const [note, setNote] = useState("")
-    const patient = "fake_patient"
     const [selectedType, setSelectedType] = useState("")
-    console.log(selectedType)
+    // console.log(selectedType)
+
+    let patient = getArgument("patient");
+    console.log("patient", patient);
 
     const [currentValue, setCurrentValue] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
     const handleClick = value => {
         setCurrentValue(value)
-        console.log(currentValue)
+        // console.log(currentValue)
     }
 
     const handleMouseOver = newHoverValue => {
@@ -34,6 +37,7 @@ export default function FeedBack() {
         sendAddRecord(patient, note, currentValue, selectedType).then(result => {
             if (result.ok) {
                 setSuccess(true);
+                window.location.href = "/Profile";
             }
             else {
                 result.json().then(data => {
@@ -50,20 +54,17 @@ export default function FeedBack() {
             <div className="justify-center item-top">
                 <NavigationBar authenticated></NavigationBar>
             </div>
-            <div className="Comment-text">
-                <ListBox setSelectedType={setSelectedType}></ListBox>
-             </div>
             <div className="flex flex-col justify-center item-center">
                 <div className="flex justify-center item-center">
                     <a className="text-furious-green text-2xl text-bold"> Feedback </a>
                 </div>
-
+                <ListBox setSelectedType={setSelectedType}></ListBox>
                 <div className="flex flex-row justify-center item-center">
                     {stars.map((_, index) => {
                         return (
                             <FaStar
                                 key={index}
-                                size={48}
+                                size={36}
                                 onClick={() => handleClick(index + 1)}
                                 onMouseOver={() => handleMouseOver(index + 1)}
                                 onMouseLeave={handleMouseLeave}

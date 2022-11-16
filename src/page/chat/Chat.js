@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { sendTherapySessionGet } from "../../utils/Request";
-import { sendTherapySendMessagePatient } from "../../utils/Request";
 import { getCookie, getArgument } from "../../utils/Cookie";
 
 import SocketClient from "../../utils/SocketClient"
