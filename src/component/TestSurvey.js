@@ -1,4 +1,4 @@
-export default function Test(props) {
+export default function TestMap() {
     let messages = [
         {
             id: "1",

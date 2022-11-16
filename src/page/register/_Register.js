@@ -17,6 +17,7 @@ export default function Register() {
     let onSubmit = (e) => {
         e.preventDefault();
 
+
         sendAuthRegister({username, firstName, lastName, password, dob, gender}).then(result => {
             if (result.ok) {
                 setSuccess(true);
@@ -56,7 +57,7 @@ export default function Register() {
                                 Sign Up
                             </h2>
                         </div>
-                        <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={onSubmit}>
+                        <form id="register-form" className="mt-8 space-y-6" action="#" method="POST">
                             <input type="hidden" name="remember" defaultValue="true"/>
                             <div className="-space-y-px rounded-md shadow-sm">
 
@@ -162,6 +163,7 @@ export default function Register() {
                                     <input
                                         type="submit"
                                         className="group relative flex w-full justify-center rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                        onClick={onSubmit}
                                         value="Next"
                                     >
                                     </input>

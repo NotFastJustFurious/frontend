@@ -1,6 +1,8 @@
 // import questions from "../questions.json";
 // import Head from "next/head";
 import { useState } from "react";
+import TestMap from "../component/TestSurvey";
+
 
 let questions = [
     {
@@ -105,6 +107,7 @@ export default function Test() {
                 <input
                   type="radio"
                   name={answer.answer}
+                  required
                   value={answer.answer}
                   checked={
                     answer.answer ===
@@ -137,6 +140,7 @@ export default function Test() {
           </div>
         </>
       )}
+            <TestMap></TestMap>
     </div>
   );
 }
