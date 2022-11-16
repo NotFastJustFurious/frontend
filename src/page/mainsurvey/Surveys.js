@@ -70,7 +70,7 @@ export default function Survey() {
                 <form className="flex flex-col divide-y divide-gray">
                     <div className="flex flex-col w-full justify-between">
                         <div className="text-m font-bold w-full justify-between">
-                            Anxiety - Do you feel anxious, worried, or restless?    
+                            Do you feel anxious, worried, or restless?    
                         </div>
                         <div>
                             <input
@@ -104,7 +104,7 @@ export default function Survey() {
 
                     <div className="flex flex-col text-m w-full justify-between">
                         <div className="text-m font-bold w-full justify-between">
-                            Anxiety - Are you easily upset even with the slightest failure?    
+                            Are you easily upset even with the slightest failure?    
                         </div>
                         <div>
                             <input
@@ -138,7 +138,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between">
-                            Anxiety - Do you feel like you are on edge?
+                            Do you feel like you are on edge?
                         </div>
                         <div>
                             <input
@@ -206,7 +206,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full flex justify-between">
-                            Depression - Do you feel like you have no energy?
+                            Do you feel like you have no energy?
                         </div>
                         <div>
                             <input
@@ -240,7 +240,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            Depression - Do you feel like you have no interest in things?
+                            Do you feel like you have no interest in things?
                         </div>
                         <div>
                             <input
@@ -274,7 +274,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            PTSD - Do you have nightmares?
+                            Do you have nightmares?
                         </div>
                         <div>
                             <input
@@ -308,7 +308,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            PTSD - Do you have flashbacks?
+                            Do you have flashbacks?
                         </div>
                         <div>
                             <input
@@ -342,7 +342,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            PTSD - Do you have trouble sleeping?
+                            Do you have trouble sleeping?
                         </div>
                         <div>
                             <input
@@ -376,7 +376,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between">
-                            OCD - Do you have repetitive thoughts?
+                            Do you have repetitive thoughts?
                         </div>
                         <div>
                             <input
@@ -410,7 +410,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            OCD - Do you worry excessively about dirt, germs, or chemicals?
+                            Do you worry excessively about dirt, germs, or chemicals?
                         </div>
                         <div>
                             <input
@@ -444,7 +444,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            OCD - Do you wash yourself or things around you excessively?
+                            Do you wash yourself or things around you excessively?
                         </div>
                         <div>
                             <input
@@ -478,7 +478,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            Eating Disorder - Do you feel like you have to eat a certain amount of food?
+                            Do you feel like you have to eat a certain amount of food?
                         </div>
                         <div>
                             <input
@@ -512,7 +512,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            Eating Disorder - Do you make yourself sick (induce vomiting) because you feel uncomfortably full?
+                            Do you make yourself sick (induce vomiting) because you feel uncomfortably full?
                         </div>
                         <div>
                             <input
@@ -546,7 +546,7 @@ export default function Survey() {
 
                     <div className="text-m w-full flex flex-col justify-between">
                         <div className="text-m font-bold w-full justify-between divide-y divide-gray">
-                            Eating Disorder - Would you say that food dominates your life?
+                            Would you say that food dominates your life?
                         </div>
                         <div>
                             <input
