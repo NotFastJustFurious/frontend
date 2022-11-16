@@ -52,6 +52,14 @@ export default function Profile() {
                             Progress
                         </button>
                     </div>
+                    <div>
+                        <button
+                            type="button"
+                            className="rounded-full w-30 min-h-4 py-2 px-6 ml-2 bg-furious-green"
+                            onClick={() => window.location.href = "/findDoctor"}>
+                            Find Therapist
+                        </button>
+                    </div>
                 </div>
                 {/* <SlideTab></SlideTab> */}
                 <LogCard className="flex-grow w-full border-t-2 mt-4 p-8 overflow-y-scroll"></LogCard>
