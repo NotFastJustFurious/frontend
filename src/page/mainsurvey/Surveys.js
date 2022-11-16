@@ -56,15 +56,15 @@ export default function Survey() {
     return (
         <>
             <NavigationBar hideLoginButton></NavigationBar>
-            <div className="flex flex-col justify-center">
-                <div className="items-center text-center">
+            <div className="flex flex-col justify-center divide-y divide-gray">
+                <div className="items-center text-center text-xl">
                     Survey Questions
                 </div>
-                <form>
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Anxiety - Do you feel anxious, worried, or restless?    
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                <form className="flex flex-col divide-y divide-gray">
+                    <div className="flex flex-col w-full justify-between">
+                        <div className="text-m font-bold w-full justify-between">
+                            Anxiety - Do you feel anxious, worried, or restless?    
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -95,10 +95,10 @@ export default function Survey() {
                         </div>    
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Anxiety - Are you easily upset even with the slightest failure?    
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="flex flex-col text-m w-full justify-between">
+                        <div className="text-m font-bold w-full justify-between">
+                            Anxiety - Are you easily upset even with the slightest failure?    
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -129,10 +129,10 @@ export default function Survey() {
                         </div>    
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Anxiety - Do you feel like you are on edge?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between">
+                            Anxiety - Do you feel like you are on edge?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -163,10 +163,10 @@ export default function Survey() {
                         </div>    
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Depression - Do you feel sad, depressed, or hopeless?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            Depression - Do you feel sad, depressed, or hopeless?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -197,10 +197,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Depression - Do you feel like you have no energy?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full flex justify-between">
+                            Depression - Do you feel like you have no energy?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -231,10 +231,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Depression - Do you feel like you have no interest in things?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            Depression - Do you feel like you have no interest in things?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -265,10 +265,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        PTSD - Do you have nightmares?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            PTSD - Do you have nightmares?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -299,10 +299,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        PTSD - Do you have flashbacks?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            PTSD - Do you have flashbacks?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -333,10 +333,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        PTSD - Do you have trouble sleeping?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            PTSD - Do you have trouble sleeping?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -367,10 +367,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        OCD - Do you have repetitive thoughts?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between">
+                            OCD - Do you have repetitive thoughts?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -401,10 +401,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        OCD - Do you worry excessively about dirt, germs, or chemicals?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            OCD - Do you worry excessively about dirt, germs, or chemicals?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -435,10 +435,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        OCD - Do you wash yourself or things around you excessively?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            OCD - Do you wash yourself or things around you excessively?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -469,10 +469,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Eating Disorder - Do you feel like you have to eat a certain amount of food?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            Eating Disorder - Do you feel like you have to eat a certain amount of food?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -503,10 +503,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Eating Disorder - Do you make yourself sick (induce vomiting) because you feel uncomfortably full?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            Eating Disorder - Do you make yourself sick (induce vomiting) because you feel uncomfortably full?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -537,10 +537,10 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <div className="text-xs w-full flex flex-row justify-between">
-                        Eating Disorder - Would you say that food dominates your life?
-                    </div>
-                    <div className="text-xs w-full flex flex-row justify-between">
+                    <div className="text-m w-full flex flex-col justify-between">
+                        <div className="text-m font-bold w-full justify-between divide-y divide-gray">
+                            Eating Disorder - Would you say that food dominates your life?
+                        </div>
                         <div>
                             <input
                                 type="radio"
@@ -571,7 +571,7 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <input type="submit" value="Submit" onClick={onClick}/>
+                    <input type="submit" value="Submit" className="rounded-full w-1/6 min-h-4 py-2 px-6 ml-2 bg-furious-green" onClick={onClick}/>
                 </form>
             </div>
         </>

@@ -9,7 +9,7 @@ export default function Test(props) {
             question: "You cannot stop or control your worries?"
         },
     ]
-    return <div className="flex flex-col mt-4">
+    return <div className="flex flex-col mt-4 divide-y divide-furious-green">
         {
             messages.map((message) => {
                 return <div>
