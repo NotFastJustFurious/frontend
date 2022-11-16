@@ -1,21 +1,17 @@
 import NavigationBar from "../../component/NavigationBar";
 import LogCard from "../../component/LogCard";
 // import SlideTab from "../../component/Tab";
-import {useState} from "react";
-import {sendProfileGet} from "../../utils/Request";
+import { useState, useEffect } from "react";
+import { sendProfileGet } from "../../utils/Request";
 
-function capitalize(str){
+function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
 export default function Profile() {
-
-    const [loadState, setLoadState] = useState(false);
     const [userData, setUserData] = useState({});
 
-    if (!loadState) {
-        setLoadState(true);
-
+    useEffect(() => {
         sendProfileGet().then((res) => {
             if (res.ok) {
                 res.json().then(body => {
@@ -27,7 +23,7 @@ export default function Profile() {
                 window.location.href = "/login";
             }
         });
-    }
+    }, [])
 
     return (
         <>
