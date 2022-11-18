@@ -22,7 +22,6 @@ export default function Chat() {
         setRenderCounter(Math.random());
     }).bind(this);
 
-    const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
     useEffect(() => {
@@ -70,11 +69,17 @@ export default function Chat() {
         setTextBoxMessage("");
     };
 
-    let onSubmit = (e) => {
-        sendCloseTherapySession().then((res) => {
+    let onSessionClose = (e) => {
+        let patient = getArgument("patient");
+        console.log(patient);
+        sendCloseTherapySession(patient).then((res) => {
             if (res.ok) {
-                setSuccess(true);
-                window.location.href = "/Profile";
+                if(patient != null) { // patient specified a.k.a. therapist is closing the session
+                    window.location.href = "/feedback?patient=" + patient;
+                }
+                else{
+                    window.location.href = "/profile";
+                }
             }
             else {
                 res.json().then(data => {
@@ -101,7 +106,7 @@ export default function Chat() {
                 <div className="relative flex felx-row justify-center item-center h-16 w-full bg-furious-green-2">
                     <div className="flex justify-self-start item-start absolute left-0 top-2 bottom-2">
                         <button type="button" className="rounded-full w-25 min-h-3 py-1 px-3 ml-2 bg-furious-green-4"
-                            onClick={onSubmit}>
+                            onClick={onSessionClose}>
                             End Session
                         </button>
                     </div>

@@ -16,7 +16,7 @@ function sendRequest(method, path, bodyObject) {
 }
 
 function sendAuthLogin(username, password) {
-    return sendRequest("POST", "login", {username, password});
+    return sendRequest("POST", "login", { username, password });
 }
 
 function sendAuthLogout() {
@@ -45,26 +45,26 @@ function sendTherapySessionGet() {
     return sendRequest("GET", "therapy");
 }
 
-function sendTherapySendMessagePatient (message) {
-    return sendRequest("POST","therapy/message", {
+function sendTherapySendMessagePatient(message) {
+    return sendRequest("POST", "therapy/message", {
         message
     })
 }
 
-function sendTherapistSessionList () {
-    return sendRequest("GET","therapy/list")
+function sendTherapistSessionList() {
+    return sendRequest("GET", "therapy/list")
 }
 
 function sendCreateTherapySession() {
     return sendRequest("POST", "therapy/create");
 }
 
-function sendCloseTherapySession() {
-    return sendRequest("DELETE", "therapy/close");
+function sendCloseTherapySession(target) {
+    return sendRequest("DELETE", "therapy/close" + (typeof target === "string" ? "?patient=" + target : ""));
 }
 
 function sendAddRecord(patient, note, rate, condition) {
-    return sendRequest("POST", "record/add", {patient, note, rate, condition});
+    return sendRequest("POST", "record/add", { patient, note, rate, condition });
 }
 
 function sendRecordGet() {
