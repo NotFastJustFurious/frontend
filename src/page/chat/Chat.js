@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { sendTherapySessionGet } from "../../utils/Request";
+import { sendTherapySessionGet, sendCloseTherapySession } from "../../utils/Request";
 import { getCookie, getArgument } from "../../utils/Cookie";
 
 import SocketClient from "../../utils/SocketClient"
@@ -22,11 +22,17 @@ export default function Chat() {
         setRenderCounter(Math.random());
     }).bind(this);
 
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
     useEffect(() => {
+        let patient = getArgument("patient");
+
         sendTherapySessionGet().then(res => {
             if (res.ok) {
                 res.json().then(resData => {
-                    data.title = resData.data.therapist;
+                    data.title = patient ? resData.data.patient : resData.data.therapist;
+                    forceRender();
                 });
             }
         })
@@ -44,7 +50,6 @@ export default function Chat() {
             console.log(`auth: ${result}`);
         });
 
-        let patient = getArgument("patient");
         console.log("patient", patient);
         if (patient != null) {
             socketRef.current.emitSelect(patient);
@@ -65,6 +70,20 @@ export default function Chat() {
         setTextBoxMessage("");
     };
 
+    let onSubmit = (e) => {
+        sendCloseTherapySession().then((res) => {
+            if (res.ok) {
+                setSuccess(true);
+                window.location.href = "/Profile";
+            }
+            else {
+                res.json().then(data => {
+                    setError(data.error);
+                })
+            }
+        });
+    };
+
     useEffect(() => {
         setTimeout(() => {
             let box = document.getElementById("chat-box");
@@ -79,10 +98,10 @@ export default function Chat() {
                 <div className="w-full">
                     <NavigationBar authenticated></NavigationBar>
                 </div>
-                <div className="flex felx-row justify-center item-center h-16 w-full bg-furious-green-2">
-                    <div className="flex justify-self-start item-start">
+                <div className="relative flex felx-row justify-center item-center h-16 w-full bg-furious-green-2">
+                    <div className="flex justify-self-start item-start absolute left-0 top-2 bottom-2">
                         <button type="button" className="rounded-full w-25 min-h-3 py-1 px-3 ml-2 bg-furious-green-4"
-                            onClick={() => window.location.href = "/Profile"}>
+                            onClick={onSubmit}>
                             End Session
                         </button>
                     </div>

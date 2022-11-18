@@ -51,8 +51,16 @@ function sendTherapySendMessagePatient (message) {
     })
 }
 
+function sendTherapistSessionList () {
+    return sendRequest("GET","therapy/list")
+}
+
 function sendCreateTherapySession() {
     return sendRequest("POST", "therapy/create");
+}
+
+function sendCloseTherapySession() {
+    return sendRequest("DELETE", "therapy/close");
 }
 
 function sendAddRecord(patient, note, rate, condition) {
@@ -74,8 +82,11 @@ exports.sendAuthRegister = sendAuthRegister;
 exports.sendProfileEdit = sendProfileEdit;
 exports.sendTherapySessionGet = sendTherapySessionGet;
 exports.sendCreateTherapySession = sendCreateTherapySession;
+exports.sendCloseTherapySession = sendCloseTherapySession;
 exports.sendTherapySendMessagePatient = sendTherapySendMessagePatient;
 exports.sendAddRecord = sendAddRecord;
 exports.sendRecordGet = sendRecordGet;
 exports.sendSurveyResponse = sendSurveyResponse;
+exports.sendTherapistSessionList = sendTherapistSessionList;
 
+window.requests = exports;

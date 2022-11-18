@@ -84,8 +84,8 @@ export default function Profile() {
                         {userType ? capitalize(userType) : "..."}
                     </a>
                 </div>
-                <div className="flex-grow w-full border-t-2 mt-16 p-8 overflow-y-scroll">
-                    <form className="mt-6 space-y-6" action="#" method="POST">
+                <div className="flex-grow w-full border-t-2 mt-8 p-8 overflow-y-scroll">
+                    <form className="mt-6 space-y-0" action="#" method="POST">
                         <input type="hidden" name="remember" defaultValue="true" />
                         <div className="-space-y-px rounded-md shadow-sm">
                             <div>

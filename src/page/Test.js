@@ -80,6 +80,7 @@ export default function Test() {
     setScore(newScore);
     setShowScore(true);
   };
+  
   return (
     <div className="flex flex-col w-screen px-5 h-screen bg-[#1A1A1A] justify-center items-center">
         <title>Quiz App</title>
