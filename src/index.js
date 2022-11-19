@@ -21,6 +21,7 @@ import FeedBack from './page/feedBack/FeedBack';
 import FindDoctor from './page/findDoctor/FindDoctor';
 import Surveys from './page/mainsurvey/Surveys';
 import Test from './page/Test';
+import Test2 from './page/Test2'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let routes = [
@@ -78,6 +79,9 @@ let routes = [
     }, {
         path: "/test",
         element: <Test/>
+    }, {
+        path: "/test2",
+        element: <Test2/>
     }
 ];
 
