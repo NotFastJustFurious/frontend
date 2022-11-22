@@ -28,6 +28,10 @@ export default class SocketClient{
         this.socket.on("chat", handler);
     }
 
+    handleClose(handler){
+        this.socket.on("close", handler);
+    }
+
     /**
      * @return {Socket}
      */

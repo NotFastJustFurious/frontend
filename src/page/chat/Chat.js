@@ -24,13 +24,22 @@ export default function Chat() {
 
     const [error, setError] = useState(false);
 
-    useEffect(() => {
-        let patient = getArgument("patient");
+    let patient = getArgument("patient");
+    
+    const closeSessionRedirect = () => {
+        if(patient != null) { // patient specified a.k.a. therapist is closing the session
+            window.location.href = "/feedback?patient=" + patient;
+        }
+        else{
+            window.location.href = "/profile";
+        }
+    }
 
+    useEffect(() => {
         sendTherapySessionGet().then(res => {
             if (res.ok) {
                 res.json().then(resData => {
-                    data.title = patient ? resData.data.patient : resData.data.therapist;
+                    data.title = patient != null ? resData.data.patient : resData.data.therapist;
                     forceRender();
                 });
             }
@@ -45,6 +54,8 @@ export default function Chat() {
             forceRender();
             setTimeout(forceRender, 1000);
         });
+
+        socketRef.current.handleClose(closeSessionRedirect);
         socketRef.current.auth(getCookie("sessionId")).then(result => {
             console.log(`auth: ${result}`);
         });
@@ -74,12 +85,7 @@ export default function Chat() {
         console.log(patient);
         sendCloseTherapySession(patient).then((res) => {
             if (res.ok) {
-                if(patient != null) { // patient specified a.k.a. therapist is closing the session
-                    window.location.href = "/feedback?patient=" + patient;
-                }
-                else{
-                    window.location.href = "/profile";
-                }
+                closeSessionRedirect();
             }
             else {
                 res.json().then(data => {

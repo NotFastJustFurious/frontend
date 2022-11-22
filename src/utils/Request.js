@@ -71,8 +71,8 @@ function sendRecordGet() {
     return sendRequest("GET", "record")
 }
 
-function sendSurveyResponse(data) {
-    return sendRequest("POST", "survey/add", data)
+function sendSurveyResponse(anx, dep, ptsd, ocd, ed) {
+    return sendRequest("POST", "survey/add", {anx, dep, ptsd, ocd, ed});
 }
 
 exports.sendAuthLogin = sendAuthLogin;

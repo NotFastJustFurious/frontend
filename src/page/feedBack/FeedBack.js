@@ -59,7 +59,7 @@ export default function FeedBack() {
                     <a className="text-furious-green text-2xl text-bold"> Feedback </a>
                 </div>
                 <ListBox setSelectedType={setSelectedType}></ListBox>
-                <div className="flex flex-row justify-center item-center">
+                <div className="flex flex-row justify-center item-center mt-5">
                     {stars.map((_, index) => {
                         return (
                             <FaStar
@@ -79,16 +79,17 @@ export default function FeedBack() {
                     <div className="">
                     </div>
                 </div>
-                <br></br>
-                <div className="flex flex-col justify-center item-center">
-                    <textarea
-                        placeholder="Doctor description"
-                        className="border-1 border-solid border-grey rounded-r-4 p-10 mx-20 min-h-100 w-300"
-                        onChange={e => setNote(e.target.value)}
-                    />
-                </div>
-                <br></br>
-                <div className="flex flex-row justify-end w-full">
+                <div class="sm:col-span-2 mt-3">
+                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Description</label>
+                        <textarea 
+                            id="description" 
+                            rows="4" 
+                            class="block p-2.5 w-full text-sm text-black bg-white rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-dark dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            onChange={e => setNote(e.target.value)}
+                            placeholder="Doctor description"
+                        />                   
+                    </div>
+                <div className="flex flex-row justify-center w-full mt-5">
                     <button
                         onClick={onSubmit}
                         className="flex w-1/8 justify-end item-end rounded-md border border-transparent bg-furious-green py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">

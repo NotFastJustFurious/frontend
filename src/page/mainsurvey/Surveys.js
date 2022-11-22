@@ -8,6 +8,10 @@ export default function Survey() {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
+    // const = (e) = {
+
+    // };
+
 
     const getRadioSelectedValue = function(radioGroup) {
         var radios = document.getElementsByName(radioGroup),
@@ -55,8 +59,21 @@ export default function Survey() {
         ptsdtotal = ptsdscore1 + ptsdscore2 + ptsdscore3;
         ocdtotal = ocdscore1 + ocdscore2 + ocdscore3;
         edtotal = edscore1 + edscore2 + edscore3;
-        // console.log("anxtotal - ",anxtotal,"deptotal - ",deptotal,"ptsdtotal - ", ptsdtotal,"ocdtotal - ",ocdtotal,"edtotal - ",edtotal);
-        window.location.href = "/profile";
+
+        console.log("anxtotal - ",anxtotal,"deptotal - ",deptotal,"ptsdtotal - ", ptsdtotal,"ocdtotal - ",ocdtotal,"edtotal - ",edtotal);
+
+        sendSurveyResponse(anxtotal, deptotal, ptsdtotal, ocdtotal, edtotal).then(result => {
+            if (result.ok) {
+                setSuccess(true);
+                window.location.href = "/profile";
+
+            }
+            else{
+                result.json().then(data => {
+                    setError(data.error);
+                })
+            }
+        });
     }
 
 
@@ -67,7 +84,7 @@ export default function Survey() {
                 <div className="items-center text-center text-xl">
                     Survey Questions
                 </div>
-                <form className="flex flex-col divide-y divide-gray">
+                <form className="flex flex-col divide-y divide-gray item-center justify-center">
                     <div className="flex flex-col w-full justify-between">
                         <div className="text-m font-bold w-full justify-between">
                             Do you feel anxious, worried, or restless?    
@@ -578,7 +595,16 @@ export default function Survey() {
                         </div>
                     </div>
 
-                    <input type="submit" value="Submit" className="rounded-full w-1/6 min-h-4 py-2 px-6 ml-2 bg-furious-green" onClick={onClick}/>
+                    <div className="flex text-center justify-center">
+                        <input 
+                            type="submit" 
+                            value="Submit" 
+                            className=" flex text-center justify-center 
+                                        w-1/4 px-4 py-3
+                                        rounded-full bg-furious-green" 
+                            onClick={onClick}
+                        />
+                    </div>
                 </form>
             </div>
         </>
