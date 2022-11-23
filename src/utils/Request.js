@@ -59,8 +59,8 @@ function sendCreateTherapySession() {
     return sendRequest("POST", "therapy/create");
 }
 
-function sendCloseTherapySession(target) {
-    return sendRequest("DELETE", "therapy/close" + (typeof target === "string" ? "?patient=" + target : ""));
+function sendCloseTherapySession(patient) {
+    return sendRequest("POST", "therapy/close", { patient });
 }
 
 function sendAddRecord(patient, note, rate, condition) {
@@ -72,7 +72,7 @@ function sendRecordGet() {
 }
 
 function sendSurveyResponse(anx, dep, ptsd, ocd, ed) {
-    return sendRequest("POST", "survey/add", {anx, dep, ptsd, ocd, ed});
+    return sendRequest("POST", "survey/add", { anx, dep, ptsd, ocd, ed });
 }
 
 exports.sendAuthLogin = sendAuthLogin;
