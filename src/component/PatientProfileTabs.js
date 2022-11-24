@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { sendCreateTherapySession } from "../utils/Request";
 import { TfiHandOpen } from "react-icons/tfi";
 import Issue from "../component/Issue";
+import Chart from './Chart';
 
 export default function PatientProfileTabs() {
   const [success, setSuccess] = useState(false);
@@ -56,7 +57,8 @@ export default function PatientProfileTabs() {
               </div>
             </div>
           </Tab.Panel>
-          <Tab.Panel>
+          <Tab.Panel>            
+            <Chart></Chart>
             <Issue></Issue>
           </Tab.Panel>
         </Tab.Panels>

@@ -1,0 +1,15 @@
+#motion-effect-example-1 {
+  max-height: 100px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+#motion-effect-example-1 tr {
+  transition-duration: 0.3s;
+}
+#motion-effect-example-1 tr:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#motion-effect-example-1 tr:hover th {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
