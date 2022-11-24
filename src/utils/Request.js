@@ -71,6 +71,10 @@ function sendRecordGet() {
     return sendRequest("GET", "record")
 }
 
+function sendRecordGetSelf() {
+    return sendRequest("GET", "record/self")
+}
+
 function sendSurveyResponse(anx, dep, ptsd, ocd, ed) {
     return sendRequest("POST", "survey/add", { anx, dep, ptsd, ocd, ed });
 }
@@ -86,6 +90,7 @@ exports.sendCloseTherapySession = sendCloseTherapySession;
 exports.sendTherapySendMessagePatient = sendTherapySendMessagePatient;
 exports.sendAddRecord = sendAddRecord;
 exports.sendRecordGet = sendRecordGet;
+exports.sendRecordGetSelf = sendRecordGetSelf;
 exports.sendSurveyResponse = sendSurveyResponse;
 exports.sendTherapistSessionList = sendTherapistSessionList;
 
