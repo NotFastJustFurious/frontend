@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "net.otlg.karmental.twa",
+                     "sha256_cert_fingerprints": ["94:22:71:D6:91:AB:2F:03:A1:4D:31:2E:F3:72:C5:6B:09:62:75:B7:0B:23:00:57:E0:3D:07:29:44:FD:B6:35"] }
+      }
+]

@@ -36,14 +36,6 @@ export default function Login() {
     return (
         <>
             <NavigationBar hideLoginButton></NavigationBar>
-            {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
             <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-md space-y-8">
                     <div>
@@ -99,7 +91,7 @@ export default function Login() {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-between">
+                        {/* <div className="flex items-center justify-between">
                             <div className="flex items-center">
                                 <input
                                     id="remember-me"
@@ -117,7 +109,7 @@ export default function Login() {
                                     Forgot your password?
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div>
                             <button

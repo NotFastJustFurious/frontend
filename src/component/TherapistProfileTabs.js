@@ -1,9 +1,5 @@
 import { Tab } from '@headlessui/react'
 import { useState, useEffect } from "react";
-import { sendCreateTherapySession } from "../utils/Request";
-import { TfiHandOpen } from "react-icons/tfi";
-import LogCard from './LogCard';
-import Progress from "./Progress";
 import History from "./History";
 import Cases from './Cases';
 
@@ -18,7 +14,7 @@ export default function PatientProfileTabs() {
         <Tab>
           <button
             type="button"
-            className="rounded-full w-30 min-h-4 py-2 px-6 ml-2 bg-furious-green"
+            className="rounded-full w-30 min-h-4 py-2 px-6 ml-2 bg-furious-green ui-selected:bg-furious-green-2 ui-selected:text-white ui-not-selected:bg-furious-green ui-not-selected:text-black "
           >
             Cases
           </button>
@@ -26,7 +22,7 @@ export default function PatientProfileTabs() {
         <Tab>
           <button
             type="button"
-            className="rounded-full w-30 min-h-4 py-2 px-6 ml-2 bg-furious-green"
+            className="rounded-full w-30 min-h-4 py-2 px-6 ml-2 bg-furious-green ui-selected:bg-furious-green-2 ui-selected:text-white ui-not-selected:bg-furious-green ui-not-selected:text-black "
           >
             History
           </button>

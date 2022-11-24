@@ -6,7 +6,7 @@ module.exports = {
             colors:{
                 "furious-green": "#5DB075",
                 "furious-green-2": "#2B633B",
-                "furious-green-3": "#9FFCBA",
+                "furious-green-3": "#8BCC9F",
                 "furious-green-4": "#3a8a52",
                 "furious-comp-1": "#632121",
                 "furious-comp-2": "#B05D5D"

@@ -2,7 +2,6 @@ import { Tab } from '@headlessui/react'
 import { useState, useEffect } from "react";
 import { sendCreateTherapySession } from "../utils/Request";
 import { TfiHandOpen } from "react-icons/tfi";
-import Issue from "../component/Issue";
 import Chart from './Chart';
 
 export default function PatientProfileTabs() {
@@ -27,10 +26,10 @@ export default function PatientProfileTabs() {
   return (
     <Tab.Group>
       <Tab.List className="flex flex-row justify-center border-green-500">
-        <Tab className="text-center item-center rounded-full ui-selected:bg-furious-green-2 ui-selected:text-white ui-not-selected:bg-furious-green ui-not-selected:text-black rounded-full w-32 p-2 min-h-4">
+        <Tab className="text-center item-center rounded-full ui-selected:bg-furious-green-2 ui-selected:text-white ui-not-selected:bg-furious-green ui-not-selected:text-black rounded-full w-32 p-2 min-h-4 ml-2">
           Find Therapist
         </Tab>
-        <Tab className="text-center item-center rounded-full ui-selected:bg-furious-green-2 ui-selected:text-white ui-not-selected:bg-furious-green ui-not-selected:text-black rounded-full w-32 p-2 min-h-4">
+        <Tab className="text-center item-center rounded-full ui-selected:bg-furious-green-2 ui-selected:text-white ui-not-selected:bg-furious-green ui-not-selected:text-black rounded-full w-32 p-2 min-h-4 ml-2">
           Progress
         </Tab>
       </Tab.List>
@@ -59,7 +58,6 @@ export default function PatientProfileTabs() {
           </Tab.Panel>
           <Tab.Panel>            
             <Chart></Chart>
-            <Issue></Issue>
           </Tab.Panel>
         </Tab.Panels>
       </div>

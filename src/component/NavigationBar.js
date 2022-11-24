@@ -7,7 +7,6 @@ import {sendAuthLogout} from "../utils/Request"
 const navigation = [
     {name: 'Home', href: '/', current: false},
     {name: 'Profile', href: '/profile', current: false},
-    {name: 'Chat', href: '/chat', current: false}
 ]
 
 const profile = {
@@ -42,7 +41,7 @@ export default function NavigationBar(props) {
     }
 
     return (
-        <Disclosure as="nav" className="bg-furious-green">
+        <Disclosure as="nav" className="bg-gradient-to-r from-emerald-400 to-furious-green">
             {({open}) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -167,7 +166,7 @@ export default function NavigationBar(props) {
                                     as="a"
                                     href={item.href}
                                     className={classNames(
-                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-700 hover:text-white',
                                         'block px-3 py-2 rounded-md text-base font-medium'
                                     )}
                                     aria-current={item.current ? 'page' : undefined}

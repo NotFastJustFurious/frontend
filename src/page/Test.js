@@ -1,7 +1,6 @@
 // import questions from "../questions.json";
 // import Head from "next/head";
 import { useState } from "react";
-import TestMap from "../component/TestSurvey";
 
 
 let questions = [
@@ -141,7 +140,6 @@ export default function Test() {
           </div>
         </>
       )}
-            <TestMap></TestMap>
     </div>
   );
 }
