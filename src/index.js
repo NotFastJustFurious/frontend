@@ -8,20 +8,10 @@ import Login from "./page/login/Login";
 import Register from "./page/register/Register";
 import Profile from "./page/profile/Profile";
 import Chat from "./page/chat/Chat";
-import Progress from "./page/progress/Progress";
-import Survey from "./page/survey/Survey";
-import TestAnxiety from "./page/test/anxiety/TestAnxiety";
-import TestBipolar from "./page/test/bipolar/TestBipolar";
-import TestDepression from "./page/test/depression/TestDepression";
-import TestOCD from "./page/test/ocd/TestOCD";
-import TestPanic from "./page/test/panic/TestPanic";
-import TestParanoia from "./page/test/paranoia/TestParanoia";
 import EditProfile from "./page/profile/EditProfile";
 import FeedBack from './page/feedBack/FeedBack';
 import FindDoctor from './page/findDoctor/FindDoctor';
 import Surveys from './page/mainsurvey/Surveys';
-import Test from './page/Test';
-import Test2 from './page/Test2'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let routes = [
@@ -44,30 +34,6 @@ let routes = [
         path: "/chat",
         element: <Chat/>
     }, {
-        path: "/progress",
-        element: <Progress/>
-    }, {
-        path: "/survey",
-        element: <Survey/>
-    }, {
-        path: "/test/anxiety",
-        element: <TestAnxiety/>
-    }, {
-        path: "/test/bipolar",
-        element: <TestBipolar/>
-    }, {
-        path: "/test/depression",
-        element: <TestDepression/>
-    }, {
-        path: "/test/ocd",
-        element: <TestOCD/>
-    }, {
-        path: "/test/panic",
-        element: <TestPanic/>
-    }, {
-        path: "/test/paranoia",
-        element: <TestParanoia/>
-    }, {
         path: "/feedBack",
         element: <FeedBack/>
     }, {
@@ -76,12 +42,6 @@ let routes = [
     }, {
         path: "/mainsurvey",
         element: <Surveys/>
-    }, {
-        path: "/test",
-        element: <Test/>
-    }, {
-        path: "/test2",
-        element: <Test2/>
     }
 ];
 

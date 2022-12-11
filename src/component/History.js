@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 export default function History(props) {
     const [records, setRecord] = useState([]);
-    const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
     useEffect(() => {
@@ -44,9 +43,6 @@ export default function History(props) {
                     className={"flex flex-row m-2 items-center text-center p-5 rounded-2xl hover:bg-furious-green-3 transition" + (border ? " outline outline-2 outline-furious-green-3" : "")}>
                     <div className="w-full flex flex-col items-start">
                         <div className="text-xs w-full flex flex-row justify-between">
-                            {/* <div>
-                                Patient : {record.date}
-                            </div> */}
                             <div>
                                 Patient : {record.patient}
                             </div>
@@ -54,9 +50,6 @@ export default function History(props) {
                                 Condition : {record.condition}
                             </div>
                         </div>
-                        {/* <div>
-                            {record.rate}
-                        </div> */}
                         <div className="text-left">
                            Note : {record.note}
                         </div>

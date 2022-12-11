@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { sendRecordGet, sendTherapistSessionList, sendTherapySessionGet } from "../utils/Request";
+import { sendTherapistSessionList } from "../utils/Request";
 
 export default function Cases(props){
 

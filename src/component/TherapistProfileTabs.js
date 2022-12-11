@@ -1,12 +1,8 @@
 import { Tab } from '@headlessui/react'
-import { useState, useEffect } from "react";
 import History from "./History";
 import Cases from './Cases';
 
-
 export default function PatientProfileTabs() {
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
 
   return (
     <Tab.Group>

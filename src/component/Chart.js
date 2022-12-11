@@ -33,22 +33,6 @@ export default function Chart() {
 
 
   let messages = [
-    // {
-    //   issueName: "OCD",
-    //   progress: 100
-    // },
-    // {
-    //   issueName: "Anxiety",
-    //   progress: 20
-    // },
-    // {
-    //   issueName: "Bipolar",
-    //   progress: 40
-    // },
-    // {
-    //   issueName: "Test",
-    //   progress: 40
-    // }
   ]
 
   for (let entry of Object.entries(record)) {

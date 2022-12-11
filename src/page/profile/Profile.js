@@ -1,5 +1,4 @@
 import NavigationBar from "../../component/NavigationBar";
-import LogCard from "../../component/LogCard";
 import PatientProfileTabs from "../../component/PatientProfileTabs";
 import TherapistProfileTabs from "../../component/TherapistProfileTabs";
 import { useState, useEffect } from "react";
@@ -59,7 +58,6 @@ export default function Profile() {
                 <div className="flex-grow w-full">
                     {tabs}
                 </div>
-                {/* <LogCard className="flex-grow w-full border-t-2 mt-4 p-8 overflow-y-scroll"></LogCard> */}
             </div>
         </>
     )

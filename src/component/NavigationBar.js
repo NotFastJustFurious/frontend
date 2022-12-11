@@ -12,7 +12,7 @@ const navigation = [
 const profile = {
     authenticated: false,
     showLoginButton: true,
-    pictureUrl: "https://avatars.githubusercontent.com/u/113335103?s=60&v=4",
+    pictureUrl: "./profile.jpg",
     authenticationPage: "./login"
 }
 

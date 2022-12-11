@@ -8,11 +8,6 @@ export default function Survey() {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
-    // const = (e) = {
-
-    // };
-
-
     const getRadioSelectedValue = function(radioGroup) {
         var radios = document.getElementsByName(radioGroup),
             val;
